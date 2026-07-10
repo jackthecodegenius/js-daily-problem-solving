@@ -361,14 +361,56 @@
 
 // console.log(checkPassword("supersecret12"));
 
-function calculateBasePrice(homeType) {
-  if (homeType === "studio") {
-    return 100;
-  } else if (homeType === "apartment") {
-    return 150;
-  } else if (homeType === "house") {
-    return 250;
+// function calculateBasePrice(homeType) {
+//   if (homeType === "studio") {
+//     return 100;
+//   } else if (homeType === "apartment") {
+//     return 150;
+//   } else if (homeType === "house") {
+//     return 250;
+//   }
+// }
+
+// console.log(calculateBasePrice("apartment"));
+
+// function calculateFinalPrice(basePrice, frequency) {
+//   let discountAmount = 0;
+
+//   if (frequency === "weekly") {
+//     discountAmount = basePrice * 0.2; // 20% of the base price
+//     return basePrice - discountAmount;
+//   }
+//   if (frequency === "bi-weekly") {
+//     discountAmount = basePrice * 0.1; // 10% of the base price
+//     return basePrice - discountAmount;
+//   }
+//   if (frequency === "monthly") {
+//     discountAmount = basePrice * 0.05; // 5% of the base price
+//     return basePrice - discountAmount;
+//   }
+//   if (frequency === "one-time") {
+//     return basePrice;
+//   }
+
+//   return basePrice;
+// }
+
+// console.log(calculateFinalPrice(100, "weekly"));
+
+function addExtras(currentPrice, wantsOvenClean, wantsWindowClean) {
+  if (wantsOvenClean === true) {
+    return currentPrice + 40;
   }
+  if (wantsOvenClean === false) {
+    return currentPrice;
+  }
+  if (wantsWindowClean === true) {
+    return currentPrice + 60;
+  }
+  if (wantsWindowClean === false) {
+    return currentPrice;
+  }
+  return currentPrice;
 }
 
-console.log(calculateBasePrice("apartment"));
+console.log(addExtras(120, false, false));
