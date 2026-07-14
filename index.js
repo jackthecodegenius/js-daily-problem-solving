@@ -397,20 +397,118 @@
 
 // console.log(calculateFinalPrice(100, "weekly"));
 
-function addExtras(currentPrice, wantsOvenClean, wantsWindowClean) {
-  if (wantsOvenClean === true) {
-    return currentPrice + 40;
+// function addExtras(currentPrice, wantsOvenClean, wantsWindowClean) {
+//   if (wantsOvenClean === true) {
+//     return currentPrice + 40;
+//   }
+//   if (wantsOvenClean === false) {
+//     return currentPrice;
+//   }
+//   if (wantsWindowClean === true) {
+//     return currentPrice + 60;
+//   }
+//   if (wantsWindowClean === false) {
+//     return currentPrice;
+//   }
+//   return currentPrice;
+// }
+
+// console.log(addExtras(120, false, false));
+
+// function calculateBasePrice(homeType) {
+//   if (homeType === "studio") {
+//     return 100;
+//   } else if (homeType === "apartment") {
+//     return 150;
+//   } else if (homeType === "house") {
+//     return 250;
+//   }
+//   return 0; // Fallback if homeType is unrecognized
+// }
+
+// function calculateFinalPrice(basePrice, frequency) {
+//   let discountAmount = 0;
+
+//   if (frequency === "weekly") {
+//     discountAmount = basePrice * 0.2; // 20% discount
+//     return basePrice - discountAmount;
+//   }
+//   if (frequency === "bi-weekly") {
+//     discountAmount = basePrice * 0.1; // 10% discount
+//     return basePrice - discountAmount;
+//   }
+//   if (frequency === "monthly") {
+//     discountAmount = basePrice * 0.05; // 5% discount
+//     return basePrice - discountAmount;
+//   }
+//   if (frequency === "one-time") {
+//     return basePrice;
+//   }
+
+//   return basePrice; // Fallback
+// }
+
+// function addExtras(currentPrice, wantsOvenClean, wantsWindowClean) {
+//   if (wantsOvenClean === true) {
+//     currentPrice = currentPrice + 40;
+//   }
+//   if (wantsWindowClean === true) {
+//     currentPrice = currentPrice + 60;
+//   }
+//   return currentPrice;
+// }
+
+// function calculateTotalQuote(
+//   homeType,
+//   frequency,
+//   wantsOvenClean,
+//   wantsWindowClean,
+// ) {
+//   // 1. Pass homeType into Station 1
+//   let basePrice = calculateBasePrice(homeType);
+
+//   // 2. Pass that basePrice and frequency into Station 2
+//   let discountedPrice = calculateFinalPrice(basePrice, frequency);
+
+//   // 3. Pass that discountedPrice and extras into Station 3
+//   let finalTotal = addExtras(discountedPrice, wantsOvenClean, wantsWindowClean);
+
+//   // 4. Return the final amount out of the master calculator
+//   return finalTotal;
+// }
+
+// // Test 1: Weekly Apartment ($150 - 20% = $120) + Oven ($40) = $160
+// console.log(calculateTotalQuote("apartment", "weekly", true, false));
+
+// function calculateTotalWorkoutTime(minutesArray) {
+//   let sum = 0;
+
+//   // Loop through whatever array is passed in as 'minutesArray'
+//   for (let i = 0; i < minutesArray.length; i++) {
+//     sum += minutesArray[i];
+//   }
+
+//   return sum;
+// }
+
+// // Create the data array outside the for loop
+// const myWeek = [45, 60, 0, 50, 45, 90, 0];
+
+// // Pass 'myWeek' into the function inside console.log
+// console.log(calculateTotalWorkoutTime(myWeek));
+
+function countWorkoutDays(minutesArray) {
+  let workoutDays = 0;
+
+  for (let i = 0; i < minutesArray.length; i++) {
+    if (minutesArray[i] > 0) {
+      workoutDays++;
+    }
   }
-  if (wantsOvenClean === false) {
-    return currentPrice;
-  }
-  if (wantsWindowClean === true) {
-    return currentPrice + 60;
-  }
-  if (wantsWindowClean === false) {
-    return currentPrice;
-  }
-  return currentPrice;
+  return workoutDays;
 }
 
-console.log(addExtras(120, false, false));
+const myWeek = [45, 60, 0, 50, 45, 90, 0];
+console.log(countWorkoutDays(myWeek));
+
+console.log(countWorkoutDays([60, 30, 20]));
