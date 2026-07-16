@@ -548,3 +548,26 @@
 //   }
 //   updateCarousel();
 // });
+
+// function countPositives(nums) {
+//   let output = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] > 0) {
+//       output++;
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(countPositives([3, 2, 0, 7, -5, 10]));
+
+function containsTarget(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === target) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(containsTarget([10, 25, 42, 8], 25));
