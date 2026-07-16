@@ -497,18 +497,54 @@
 // // Pass 'myWeek' into the function inside console.log
 // console.log(calculateTotalWorkoutTime(myWeek));
 
-function countWorkoutDays(minutesArray) {
-  let workoutDays = 0;
+// function countWorkoutDays(minutesArray) {
+//   let workoutDays = 0;
 
-  for (let i = 0; i < minutesArray.length; i++) {
-    if (minutesArray[i] > 0) {
-      workoutDays++;
-    }
-  }
-  return workoutDays;
-}
+//   for (let i = 0; i < minutesArray.length; i++) {
+//     if (minutesArray[i] > 0) {
+//       workoutDays++;
+//     }
+//   }
+//   return workoutDays;
+// }
 
-const myWeek = [45, 60, 0, 50, 45, 90, 0];
-console.log(countWorkoutDays(myWeek));
+// const myWeek = [45, 60, 0, 50, 45, 90, 0];
+// console.log(countWorkoutDays(myWeek));
 
-console.log(countWorkoutDays([60, 30, 20]));
+// console.log(countWorkoutDays([60, 30, 20]));
+
+// const slide = document.querySelector(".carousel-slide");
+// const images = document.querySelectorAll(".carousel-img");
+// const prevBtn = document.querySelector(".prev-btn");
+// const nextBtn = document.querySelector(".next-btn");
+
+// // Start at the first image (index 0)
+// let currentIndex = 0;
+// const totalImages = images.length;
+
+// function updateCarousel() {
+//   // Translate the images to the left based on index
+//   // Index 0 = 0%, Index 1 = -33.33%, Index 2 = -66.66%
+//   const percentage = -(currentIndex * 33.333);
+//   slide.style.transform = `translateX(${percentage}%)`;
+// }
+
+// // Next button click event
+// nextBtn.addEventListener("click", () => {
+//   if (currentIndex < totalImages - 1) {
+//     currentIndex++; // Move to next image
+//   } else {
+//     currentIndex = 0; // Loop back to the start
+//   }
+//   updateCarousel();
+// });
+
+// // Previous button click event
+// prevBtn.addEventListener("click", () => {
+//   if (currentIndex > 0) {
+//     currentIndex--; // Move to previous image
+//   } else {
+//     currentIndex = totalImages - 1; // Loop to the end
+//   }
+//   updateCarousel();
+// });
