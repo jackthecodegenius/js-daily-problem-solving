@@ -561,13 +561,47 @@
 
 // console.log(countPositives([3, 2, 0, 7, -5, 10]));
 
-function containsTarget(nums, target) {
+// function containsTarget(nums, target) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === target) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+// console.log(containsTarget([10, 25, 42, 8], 25));
+
+// function doubleArrayValues(nums) {
+//   let result = [];
+
+//   for (let i = 0; i < nums.length; i++) {
+//     result.push(nums[i] * 2);
+//   }
+//   return result;
+// }
+
+// console.log(doubleArrayValues([2, 4, 6]));
+
+// function getEvens(nums) {
+//   let evens = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] % 2 === 0) {
+//       evens.push(nums[i]);
+//     }
+//   }
+//   return evens;
+// }
+
+// console.log(getEvens([8, 9, 10, 14, 15, 16]));
+
+function findMax(nums) {
+  let max = nums[0];
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === target) {
-      return true;
+    if (max < nums[i]) {
+      max = nums[i];
     }
   }
-  return false;
+  return max;
 }
-
-console.log(containsTarget([10, 25, 42, 8], 25));
+console.log(findMax([30, 5, 10, 20]));
