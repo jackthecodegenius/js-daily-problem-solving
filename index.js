@@ -629,3 +629,68 @@
 // }
 
 // console.log(findMatchingWords(["apple", "banana", "avocado", "cherry"], "a"));
+
+// function defangIPaddr(address) {
+//   let result = "";
+//   for (let i = 0; i < address.length; i++) {
+//     if (address[i] === ".") {
+//       result += "[.]";
+//     } else {
+//       result += address[i];
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(defangIPaddr("1.1.1.1"));
+
+// function addExclamation(s) {
+//   let result = "";
+
+//   for (let i = 0; i < s.length; i++) {
+//     // Slide your finger s[i] through the string!
+//     if (s[i] === s[i].toUpperCase() && s[i] !== " ") {
+//       result += s[i] + "!";
+//     } else {
+//       result += s[i];
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(addExclamation("Hello World"));
+
+// function replaceSpaces(text) {
+//   let result = "";
+
+//   for (let i = 0; i < text.length; i++) {
+//     if (text[i] === " ") {
+//       result += "-";
+//     } else {
+//       result += text[i];
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(replaceSpaces("hello world"));
+
+function countVowels(text) {
+  let result = 0;
+
+  for (let i = 0; i < text.length; i++) {
+    if (
+      text[i] === "a" ||
+      text[i] === "e" ||
+      text[i] === "i" ||
+      text[i] === "o" ||
+      text[i] === "u"
+    ) {
+      result++;
+    }
+  }
+  return result;
+}
+
+console.log(countVowels("hello"));
