@@ -763,7 +763,7 @@
 //   let result = 0;
 //   for (let i = 0; i < text.length; i++) {
 //     if (
-//       text[i] !== text[i].toLowerCase() &&
+//       text[i] !== text[i].toLowerCase() && // the !-- is a not equals to meaning that it'll search for only letters and makes sure lower case letters aren't included only capitals
 //       text[i] === text[i].toUpperCase()
 //     ) {
 //       result++;
@@ -777,7 +777,7 @@
 // function replaceVowels(text) {
 //   let result = "";
 //   for (let i = 0; i < text.length; i++) {
-//     if ("aeiouAEIOU".includes(text[i])) {
+//     if ("aeiouAEIOU".includes(text[i])) {  // it's going through the text to see if any vowels are included, so every single letter
 //       result += "*";
 //     } else {
 //       result += text[i];
@@ -792,6 +792,7 @@ function removeDuplicates(text) {
   let result = "";
   for (let i = 0; i < text.length; i++) {
     if (result.includes(text[i]) === false) {
+      // going through the result data but additionally it's being checked with the text data whether a letter exists or not, so whenever a duplicate occurs it makes it so its false so the code wont include write the same letter again
       result += text[i];
     }
   }
