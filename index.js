@@ -676,21 +676,126 @@
 
 // console.log(replaceSpaces("hello world"));
 
-function countVowels(text) {
-  let result = 0;
+// function countVowels(text) {
+//   let result = 0;
 
+//   for (let i = 0; i < text.length; i++) {
+//     if (
+//       text[i] === "a" ||
+//       text[i] === "e" ||
+//       text[i] === "i" ||
+//       text[i] === "o" ||
+//       text[i] === "u"
+//     ) {
+//       result++;
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(countVowels("hello"));
+
+// function replaceA(text) {
+//   let result = "";
+//   for (let i = 0; i < text.length; i++) {
+//     if (text[i] === "a") {
+//       result += "@";
+//     } else {
+//       result += text[i];
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(replaceA("banana"));
+
+// function countOccurrences(text, char) {
+//   let output = 0;
+//   for (let i = 0; i < text.length; i++) {
+//     if (text[i] === char) {
+//       output++;
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(countOccurrences("hello world", "l"));
+
+// function doubleChar(text, target) {
+//   let result = "";
+//   for (let i = 0; i < text.length; i++) {
+//     if (text[i] === target) {
+//       result += target + target;
+//     } else {
+//       result += text[i];
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(doubleChar("hello", "l"));
+
+// function reverseString(text) {
+//   let result = "";
+//   for (let i = 0; i < text.length; i++) {
+//     result = text[i] + result;
+//   }
+//   return result;
+// }
+
+// console.log(reverseString("cat"));
+
+// function removeSpaces(text) {
+//   let result = "";
+//   for (let i = 0; i < text.length; i++) {
+//     if (text[i] === " ") {
+//       result += "";
+//     } else {
+//       result += text[i];
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(removeSpaces("hello world"));
+
+// function countCapitals(text) {
+//   let result = 0;
+//   for (let i = 0; i < text.length; i++) {
+//     if (
+//       text[i] !== text[i].toLowerCase() &&
+//       text[i] === text[i].toUpperCase()
+//     ) {
+//       result++;
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(countCapitals("Hello World"));
+
+// function replaceVowels(text) {
+//   let result = "";
+//   for (let i = 0; i < text.length; i++) {
+//     if ("aeiouAEIOU".includes(text[i])) {
+//       result += "*";
+//     } else {
+//       result += text[i];
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(replaceVowels("hello world"));
+
+function removeDuplicates(text) {
+  let result = "";
   for (let i = 0; i < text.length; i++) {
-    if (
-      text[i] === "a" ||
-      text[i] === "e" ||
-      text[i] === "i" ||
-      text[i] === "o" ||
-      text[i] === "u"
-    ) {
-      result++;
+    if (result.includes(text[i]) === false) {
+      result += text[i];
     }
   }
   return result;
 }
 
-console.log(countVowels("hello"));
+console.log(removeDuplicates("banana"));
