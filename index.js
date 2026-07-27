@@ -788,15 +788,113 @@
 
 // console.log(replaceVowels("hello world"));
 
-function removeDuplicates(text) {
-  let result = "";
-  for (let i = 0; i < text.length; i++) {
-    if (result.includes(text[i]) === false) {
-      // going through the result data but additionally it's being checked with the text data whether a letter exists or not, so whenever a duplicate occurs it makes it so its false so the code wont include write the same letter again
-      result += text[i];
+// function removeDuplicates(text) {
+//   let result = "";
+//   for (let i = 0; i < text.length; i++) {
+//     if (result.includes(text[i]) === false) {
+//       // going through the result data but additionally it's being checked with the text data whether a letter exists or not, so whenever a duplicate occurs it makes it so its false so the code wont include write the same letter again
+//       result += text[i];
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(removeDuplicates("banana"));
+
+// function countChar(text, char) {
+//   let count = 0;
+//   for (let i = 0; i < text.length; i++) {
+//     if (text[i] === char) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(countChar("banana", "a"));
+
+// function findLongestWord(sentence) {
+//   let maxCount = 0;
+//   let words = sentence.split(" "); // ["the", "quick", "brown", "fox"]
+
+//   for (let i = 0; i < words.length; i++) { // words.length will count every single letter and space
+//     if (words[i].length > maxCount) {
+//       maxCount = words[i].length;
+//     }
+//   }
+
+//   return maxCount;
+// }
+
+// console.log(findLongestWord("the quick brown fox"));
+
+// function countShortWords(sentence) {
+//   let words = sentence.split(" ");
+//   let count = 0;
+
+//   for (let i = 0; i < words.length; i++) {
+//     if (words[i].length <= 4) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(countShortWords("the quick brown fox")); // Outputs: 2
+
+// function countUppercase(text) {
+//   let count = 0;
+
+//   for (let i = 0; i < text.length; i++) {
+//     if (text[i] !== " " && text[i] === text[i].toUpperCase()) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(countUppercase("Hello World")); // Should output 2
+
+// function countEvens(numbers) {
+//   let count = 0;
+
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] % 2 === 0) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(countEvens([1, 2, 3, 4, 6]));
+
+// function countOdds(numbers) {
+//   let count = 0;
+
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] % 2 !== 0) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(countOdds([1, 2, 3, 4, 5])); // Should output 3
+
+function countGreaterThanTen(numbers) {
+  let count = 0;
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > 10) {
+      count++;
     }
   }
-  return result;
+
+  return count;
 }
 
-console.log(removeDuplicates("banana"));
+console.log(countGreaterThanTen([5, 12, 3, 20, 10])); // Should output 2
