@@ -961,3 +961,160 @@
 // }
 
 // console.log(fizzBuzzLight([1, 2, 3, 4, 6]));
+
+class BankAccount {
+  // Private field: cannot be read or changed directly outside this class
+  #balance;
+
+  constructor(initialDeposit) {
+    this.#balance = initialDeposit;
+  }
+
+  // Controlled method to deposit money safely
+  deposit(amount) {
+    if (amount <= 0) {
+      console.log("Deposit amount must be positive.");
+      return;
+    }
+    this.#balance += amount;
+    console.log(`Deposited $${amount}. New balance: $${this.#balance}`);
+  }
+
+  // Controlled method to check balance without exposing the raw variable
+  getBalance() {
+    return `Your balance is $${this.#balance}`;
+  }
+}
+
+const myAccount = new BankAccount(100);
+
+// 1. Using allowed, public methods:
+myAccount.deposit(50); // Output: Deposited $50. New balance: $150
+console.log(myAccount.getBalance()); // Output: Your balance is $150
+
+// 2. Encapsulation in action (Protection):
+// Direct modification fails/throws an error because #balance is private:
+// myAccount.#balance = 999999; // ❌ SyntaxError: Private field '#balance' must be declared in an enclosing class
+
+// // Trying to read it directly returns undefined (or throws an error depending on the engine):
+// console.log(myAccount.#balance); // ❌ Error
+
+class SmartCoffeeMachine {
+  // Public method: Simple, high-level interface for the user
+  makeCoffee(type) {
+    this.#boilWater();
+    this.#grindBeans();
+    this.#brew(type);
+    console.log(`☕ Here is your hot ${type}! Enjoy.`);
+  }
+
+  // Private methods: Complex background details hidden away
+  #boilWater() {
+    console.log("Heating water to 93°C...");
+  }
+
+  #grindBeans() {
+    console.log("Grinding dark roast beans...");
+  }
+
+  #brew(type) {
+    console.log(`Extracting espresso for a ${type}...`);
+  }
+}
+
+// --- Trying it out ---
+const coffeeMaker = new SmartCoffeeMachine();
+
+// The user only needs to press ONE button:
+coffeeMaker.makeCoffee("Flat White");
+
+// Base / Parent Class
+class Character {
+  constructor(name, health) {
+    this.name = name;
+    this.health = health;
+  }
+
+  takeDamage(amount) {
+    this.health -= amount;
+    console.log(
+      `${this.name} took ${amount} damage! Current health: ${this.health}`,
+    );
+  }
+}
+
+// Child Class 1: Inherits all properties and methods from Character
+class Warrior extends Character {
+  constructor(name, health, armor) {
+    // 'super' calls the constructor of the parent class (Character)
+    super(name, health);
+    this.armor = armor; // New property unique to Warrior
+  }
+
+  // New method unique to Warrior
+  shieldBlock() {
+    console.log(`${this.name} blocked the attack with a shield!`);
+  }
+}
+
+// Child Class 2: Also inherits from Character
+class Mage extends Character {
+  constructor(name, health, mana) {
+    super(name, health);
+    this.mana = mana;
+  }
+
+  castSpell() {
+    console.log(`${this.name} cast a Fireball using ${this.mana} mana!`);
+  }
+}
+
+// --- Trying it out ---
+const hero = new Warrior("Guts", 100, 50);
+const wizard = new Mage("Gandalf", 80, 100);
+
+hero.takeDamage(20); // Output: Guts took 20 damage! Current health: 80
+wizard.takeDamage(15); // Output: Gandalf took 15 damage! Current health: 65
+
+// Parent Class
+class Notification {
+  send(message) {
+    console.log(`Sending general notification: ${message}`);
+  }
+}
+
+// Child Class 1: Overrides send() with its own custom logic
+class EmailNotification extends Notification {
+  send(message) {
+    console.log(`📧 Sending EMAIL: "${message}" to user@example.com`);
+  }
+}
+
+// Child Class 2: Overrides send() with its own custom logic
+class SMSNotification extends Notification {
+  send(message) {
+    console.log(`📱 Sending SMS text: "${message}" to +61400000000`);
+  }
+}
+
+// Child Class 3: Overrides send() with its own custom logic
+class PushNotification extends Notification {
+  send(message) {
+    console.log(`🔔 Triggering PUSH notification badge: "${message}"`);
+  }
+}
+
+// --- Polymorphism in Action ---
+
+// A list containing different notification types
+const notifications = [
+  new EmailNotification(),
+  new SMSNotification(),
+  new PushNotification(),
+];
+
+// We call the exact same method (.send) on every item,
+// but each object responds in its own unique way:
+notifications.forEach((notifier) => {
+  notifier.send("Your order has shipped!");
+});
