@@ -885,16 +885,79 @@
 
 // console.log(countOdds([1, 2, 3, 4, 5])); // Should output 3
 
-function countGreaterThanTen(numbers) {
-  let count = 0;
+// function countGreaterThanTen(numbers) {
+//   let count = 0;
 
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > 10) {
-      count++;
-    }
-  }
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > 10) {
+//       count++;
+//     }
+//   }
 
-  return count;
-}
+//   return count;
+// }
 
-console.log(countGreaterThanTen([5, 12, 3, 20, 10])); // Should output 2
+// console.log(countGreaterThanTen([5, 12, 3, 20, 10])); // Should output 2
+
+// function getPositives(numbers) {
+//   let result = [];
+
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > 0) {
+//       result.push(numbers[i]);
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(getPositives([-2, 5, 0, 8, -1])); // Should output [5, 8]
+
+// function getLongWords(words) {
+//   let result = [];
+
+//   for (let i = 0; i < words.length; i++) {
+//     if (words[i].length >= 5) {
+//       result.push(words[i]);
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(getLongWords(["apple", "dog", "banana", "cat", "elephant"]));
+
+// function getTotalCharacterCount(words) {
+//   let output = 0;
+//   for (let i = 0; i < words.length; i++) {
+//     output += words[i].length;
+//   }
+//   return output;
+// }
+
+// console.log(getTotalCharacterCount(["cat", "dog"]));
+
+// function sumLongWordLengths(words) {
+//   let output = 0;
+//   for (let i = 0; i < words.length; i++) {
+//     if (words[i].length >= 4) {
+//       output += words[i].length;
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(sumLongWordLengths(["cat", "elephant", "dog", "bear"]));
+
+// function fizzBuzzLight(nums) {
+//   let output = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] % 3 === 0) {
+//       output.push("Fizz");
+//     } else {
+//       output.push(String(nums[i]));
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(fizzBuzzLight([1, 2, 3, 4, 6]));
