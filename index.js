@@ -1206,15 +1206,56 @@
 // }
 // console.log(countOccurrences([1, 4, 2, 4, 3, 4, 3], 3));
 
-function findMin(nums) {
-  let output = nums[0];
+// function findMin(nums) {
+//   let output = nums[0];
+
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] < output) {
+//       output = nums[i];
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(findMin([15, 4, 22, 1, 9]));
+
+// function runningSum(nums) {
+//   let currentSum = 0;
+//   let result = [];
+
+//   for (let i = 0; i < nums.length; i++) {
+//     currentSum += nums[i];
+//     result.push(currentSum);
+//   }
+
+//   return result;
+// }
+
+// console.log(runningSum([1, 2, 3, 4]));
+
+// make a empty array to store values
+// make an variable integar to store tempory values
+
+//  - loop through each number in the array
+//     - add each number from the tempory values and add it
+//     - save the new value after they've been added to the array
+
+// make a variable to store a integar value as the output
+
+// loop through all the numbers in the array
+//     - need a condition so numbers that are higher than 10 so any less gets filtered out
+//          - add 1 into the output value when numbers in the array are higher than 10
+// return output value
+
+function countAboveTen(nums) {
+  let output = 0;
 
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] < output) {
-      output = nums[i];
+    if (nums[i] > 10) {
+      output++;
     }
   }
   return output;
 }
 
-console.log(findMin([15, 4, 22, 1, 9]));
+console.log(countAboveTen([4, 12, 8, 15, 20, 3]));
