@@ -1247,15 +1247,68 @@
 //          - add 1 into the output value when numbers in the array are higher than 10
 // return output value
 
-function countAboveTen(nums) {
-  let output = 0;
+// function countAboveTen(nums) {
+//   let output = 0;
 
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] > 10) {
+//       output++;
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(countAboveTen([4, 12, 8, 15, 20, 3]));
+
+// make a variable to store a integar for the first negative
+
+// loop though the list
+//    - if a number is below 0 it will hit the condition
+//          - the number here will  be stored in the variable
+// return the number
+
+// function findFirstNegative(nums) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] < 0) {
+//       return nums[i];
+//     }
+//   }
+
+//   return 0;
+// }
+
+// function findFirstOverFifty(nums) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] > 50) {
+//       return nums[i];
+//     }
+//   }
+// }
+
+// console.log(findFirstOverFifty([12, 45, 68, 23, 99]));
+
+// function findIndexOfFirstOdd(nums) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] % 2 !== 0) {
+//       return i;
+//     }
+//   }
+//   return -1;
+// }
+
+// console.log(findIndexOfFirstOdd([4, 10, 7, 12, 15]));
+
+// loop through the numbers in the array
+//  - if condition to check if a number in the array is the same as the last one
+//      return whether true or false that tere was a dupes
+
+function hasConsecutiveDuplicates(nums) {
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] > 10) {
-      output++;
+    if (nums[i] === nums[i + 1]) {
+      return true;
     }
   }
-  return output;
+  return false;
 }
 
-console.log(countAboveTen([4, 12, 8, 15, 20, 3]));
+console.log(hasConsecutiveDuplicates([1, 5, 2, 2, 8]));
