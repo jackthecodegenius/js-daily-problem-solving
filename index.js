@@ -1302,13 +1302,58 @@
 //  - if condition to check if a number in the array is the same as the last one
 //      return whether true or false that tere was a dupes
 
-function hasConsecutiveDuplicates(nums) {
+// function hasConsecutiveDuplicates(nums) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === nums[i + 1]) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+// console.log(hasConsecutiveDuplicates([1, 5, 2, 2, 8]));
+
+// function isSorted(nums) {
+//   for (let i = 0; i < nums.length - 1; i++) {
+//     if (nums[i] > nums[i + 1]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(isSorted([1, 3, 5, 8, 10]));
+
+// function findFirstPeak(nums) {
+//   for (let i = 1; i < nums.length - 1; i++) {
+//     if (nums[i] > nums[i - 1] && nums[i] > nums[i + 1]) {
+//       return nums[i];
+//     }
+//   }
+//   return -1;
+// }
+
+// console.log(findFirstPeak([1, 3, 2, 5, 4]));
+
+// function allPositive(nums) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] <= 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(allPositive([2, 5, 12, 80]));
+
+function countOdds(nums) {
+  let output = 0;
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === nums[i + 1]) {
-      return true;
+    if (nums[i] % 2 !== 0) {
+      output++;
     }
   }
-  return false;
+  return output;
 }
 
-console.log(hasConsecutiveDuplicates([1, 5, 2, 2, 8]));
+console.log(countOdds([2, 4, 6, 8]));
