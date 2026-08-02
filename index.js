@@ -1346,14 +1346,26 @@
 
 // console.log(allPositive([2, 5, 12, 80]));
 
-function countOdds(nums) {
-  let output = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] % 2 !== 0) {
-      output++;
+// function countOdds(nums) {
+//   let output = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] % 2 !== 0) {
+//       output++;
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(countOdds([2, 4, 6, 8]));
+
+function findMin(nums) {
+  let min = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] < min) {
+      min = nums[i];
     }
   }
-  return output;
+  return min;
 }
 
-console.log(countOdds([2, 4, 6, 8]));
+console.log(findMin([-4, 10, 0, -15, 2]));
