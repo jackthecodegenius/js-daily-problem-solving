@@ -1358,14 +1358,113 @@
 
 // console.log(countOdds([2, 4, 6, 8]));
 
-function findMin(nums) {
-  let min = nums[0];
-  for (let i = 1; i < nums.length; i++) {
-    if (nums[i] < min) {
-      min = nums[i];
+// function findMin(nums) {
+//   let min = nums[0];
+//   for (let i = 1; i < nums.length; i++) {
+//     if (nums[i] < min) {
+//       min = nums[i];
+//     }
+//   }
+//   return min;
+// }
+
+// console.log(findMin([-4, 10, 0, -15, 2]));
+
+// function findLongestWord(words) {
+//   let longest = words[0];
+//   for (let i = 1; i < words.length; i++) {
+//     if (words[i].length > longest.length) {
+//       longest = words[i];
+//     }
+//   }
+//   return longest;
+// }
+
+// console.log(findLongestWord(["apple", "banana", "kiwi", "strawberry"]));
+
+// function findHighestScore(scores) {
+//   let highest = scores[0];
+//   for (let i = 1; i < scores.length; i++) {
+//     if (scores[i] > highest) {
+//       highest = scores[i];
+//     }
+//   }
+//   return highest;
+// }
+
+// console.log(findHighestScore([65, 88, 92, 79, 95, 84]));
+
+// function countSpikes(nums, baseline) {
+//   let output = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] > baseline) {
+//       output++;
+//     }
+//   }
+//   return output;
+// }
+// console.log(countSpikes([22, 28, 19, 31, 25], 25));
+
+// const team = [
+//   { name: "Alex", score: 14 },
+//   { name: "Sam", score: 28 },
+//   { name: "Jordan", score: 22 },
+// ];
+
+// function getBestPlayer(team) {
+//   let bestPlayer = team[0];
+
+//   for (let i = 1; i < team.length; i++) {
+//     if (team[i].score > bestPlayer.score) {
+//       bestPlayer = team[i];
+//     }
+//   }
+//   return bestPlayer.name;
+// }
+
+// console.log(getBestPlayer(team));
+
+// const inventory = [
+//   { name: "Laptop", price: 999 },
+//   { name: "Mouse", price: 25 },
+//   { name: "Keyboard", price: 75 },
+// ];
+
+// function getCheapestProduct(inventory) {
+//   let cheapest = inventory[0];
+//   for (let i = 1; i < inventory.length; i++) {
+//     if (inventory[i].price < cheapest.price) {
+//       cheapest = inventory[i];
+//     }
+//   }
+//   return cheapest.name;
+// }
+
+// console.log(getCheapestProduct(inventory));
+
+const customers1 = [
+  { name: "Alice", accounts: [1, 2, 3] }, // Total: 6
+  { name: "Bob", accounts: [3, 2, 2] }, // Total: 7
+];
+
+function maximumWealth(customers) {
+  let maxWealth = 0;
+
+  // Loop 1: Go through each customer
+  for (let i = 0; i < customers.length; i++) {
+    // Step A: Calculate this customer's total wealth using a standard loop!
+    let currentWealth = 0;
+    for (let j = 0; j < customers[i].accounts.length; j++) {
+      currentWealth += customers[i].accounts[j]; // add each account number to currentWealth
+    }
+
+    // Step B: Compare against maxWealth (the exact record-holder pattern you mastered today!)
+    if (currentWealth > maxWealth) {
+      maxWealth = currentWealth;
     }
   }
-  return min;
+
+  return maxWealth;
 }
 
-console.log(findMin([-4, 10, 0, -15, 2]));
+console.log(maximumWealth(customers1));
