@@ -1527,3 +1527,40 @@
 // }
 
 // console.log(getConcatenation(nums1));
+
+// const nums1 = [0, 2, 1, 5, 3, 4];
+
+// function buildArray(nums) {
+//   let ans = [];
+
+//   for (let i = 0; i < nums.length; i++) {
+//     ans.push(nums[nums[i]]);
+//   }
+
+//   return ans;
+// }
+
+// console.log(buildArray(nums1));
+
+// const scores = [12, 45, 68, 32, 89, 41];
+
+// function checkHighestScore(scores) {
+//   let highest = Math.max(...scores);
+//   if (highest >= 50) {
+//     return "pass";
+//   }
+//   return "fail";
+// }
+
+// console.log(checkHighestScore(scores)); // Output: "pass"
+
+// const guestList = ["Sam", "Jordan", "Taylor", "Alex", "Morgan"];
+
+// function checkVIP(guests) {
+//   if (guests.includes("Alex")) {
+//     return "access granted";
+//   }
+//   return "access denied";
+// }
+
+// console.log(checkVIP(guestList));
