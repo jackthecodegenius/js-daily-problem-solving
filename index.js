@@ -1442,29 +1442,88 @@
 
 // console.log(getCheapestProduct(inventory));
 
-const customers1 = [
-  { name: "Alice", accounts: [1, 2, 3] }, // Total: 6
-  { name: "Bob", accounts: [3, 2, 2] }, // Total: 7
-];
+// const customers1 = [
+//   { name: "Alice", accounts: [1, 2, 3] }, // Total: 6
+//   { name: "Bob", accounts: [3, 2, 2] }, // Total: 7
+// ];
 
-function maximumWealth(customers) {
-  let maxWealth = 0;
+// function maximumWealth(customers) {
+//   let maxWealth = 0;
 
-  // Loop 1: Go through each customer
-  for (let i = 0; i < customers.length; i++) {
-    // Step A: Calculate this customer's total wealth using a standard loop!
-    let currentWealth = 0;
-    for (let j = 0; j < customers[i].accounts.length; j++) {
-      currentWealth += customers[i].accounts[j]; // add each account number to currentWealth
-    }
+//   // Loop 1: Go through each customer
+//   for (let i = 0; i < customers.length; i++) {
+//     // Step A: Calculate this customer's total wealth using a standard loop!
+//     let currentWealth = 0;
+//     for (let j = 0; j < customers[i].accounts.length; j++) {
+//       currentWealth += customers[i].accounts[j]; // add each account number to currentWealth
+//     }
 
-    // Step B: Compare against maxWealth (the exact record-holder pattern you mastered today!)
-    if (currentWealth > maxWealth) {
-      maxWealth = currentWealth;
-    }
-  }
+//     // Step B: Compare against maxWealth (the exact record-holder pattern you mastered today!)
+//     if (currentWealth > maxWealth) {
+//       maxWealth = currentWealth;
+//     }
+//   }
 
-  return maxWealth;
-}
+//   return maxWealth;
+// }
 
-console.log(maximumWealth(customers1));
+// console.log(maximumWealth(customers1));
+
+// const candies1 = [2, 3, 5, 1, 3];
+// const extraCandies1 = 3;
+
+// function maximumCandies(candies, extraCandies) {
+//   let maxCandies = candies[0];
+//   for (let i = 1; i < candies.length; i++) {
+//     if (candies[i] > maxCandies) {
+//       maxCandies = candies[i];
+//     }
+//   }
+
+//   let result = [];
+
+//   for (let i = 0; i < candies.length; i++) {
+//     if (candies[i] + extraCandies >= maxCandies) {
+//       result.push(true);
+//     } else {
+//       result.push(false);
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(maximumCandies(candies1, extraCandies1));
+
+// const nums1 = [8, 1, 2, 2, 3];
+
+// function smallerNumbersThanCurrent(nums) {
+//   let result = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     let count = 0;
+//     for (let j = 0; j < nums.length; j++) {
+//       if (nums[j] < nums[i]) {
+//         count++;
+//       }
+//     }
+//     result.push(count);
+//   }
+//   return result;
+// }
+
+// console.log(smallerNumbersThanCurrent(nums1));
+
+// const nums1 = [1, 2, 1];
+
+// function getConcatenation(nums1) {
+//   let ans = [];
+//   for (let i = 0; i < nums1.length; i++) {
+//     ans.push(nums1[i]);
+//   }
+//   for (let j = 0; j < nums1.length; j++) {
+//     ans.push(nums1[j]);
+//   }
+//   return ans;
+// }
+
+// console.log(getConcatenation(nums1));
