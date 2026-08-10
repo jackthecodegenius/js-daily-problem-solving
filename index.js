@@ -1564,3 +1564,110 @@
 // }
 
 // console.log(checkVIP(guestList));
+
+// const sentence1 = "thequickbrownfoxjumpsoverthelazydog";
+// const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+
+// function checkIfPangram(sentence1) {
+//   for (let i = 0; i < alphabet.length; i++) {
+//     if (!sentence.includes(alphabet[i])) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(checkIfPangram(sentence1));
+
+// const nums1 = [1, 2, 3, 1];
+
+// function hasDuplicates(nums) {
+//   let seen = [];
+
+//   for (let i = 0; i < nums.length; i++) {
+//     if (seen.includes(nums[i])) {
+//       return true;
+//     }
+//     seen.push(nums[i]);
+//   }
+
+//   return false;
+// }
+
+// console.log(hasDuplicates(nums1));
+
+// const cart = [25, 40, 50];
+
+// function calculateTotal(prices) {
+//   let total = 0;
+
+//   for (let i = 0; i < prices.length; i++) {
+//     total += prices[i];
+//   }
+//   if (total > 100) {
+//     total = total * 0.9;
+//   }
+
+//   return total;
+// }
+
+// console.log(calculateTotal(cart));
+
+// const scores = [12, 55, 80, 42, 99, 10, 60];
+
+// function getHighScores(scoreList) {
+//   let highScores = [];
+
+//   for (let i = 0; i < scoreList.length; i++) {
+//     if (scoreList[i] >= 50) {
+//       highScores.push(scoreList[i]);
+//     }
+//   }
+
+//   return highScores;
+// }
+
+// console.log(getHighScores(scores));
+
+// const items = [
+//   { name: "Coffee", price: 4.5, inStock: true },
+//   { name: "Mug", price: 12.0, inStock: false },
+//   { name: "Tea", price: 3.5, inStock: true },
+//   { name: "French Press", price: 25.0, inStock: false },
+// ];
+
+// function getAvailableItems(itemList) {
+//   let available = [];
+//   for (let i = 0; i < itemList.length; i++) {
+//     if (itemList[i].inStock) {
+//       available.push(itemList[i].name);
+//     }
+//   }
+//   return available;
+// }
+
+// console.log(getAvailableItems(items));
+// // Expected Output: ["Coffee", "Tea"]
+
+// const transactions = [
+//   { type: "deposit", amount: 100 },
+//   { type: "withdrawal", amount: 30 },
+//   { type: "deposit", amount: 50 },
+//   { type: "withdrawal", amount: 10 },
+// ];
+
+// function getBalance(history) {
+//   let output = 0;
+//   for (let i = 0; i < history.length; i++) {
+//     if (history[i].type === "deposit") {
+//       output += history[i].amount;
+//     }
+//     if (history[i].type === "withdrawal") {
+//       output -= history[i].amount;
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(getBalance(transactions));
+// // Expected Output: 110
