@@ -1671,3 +1671,91 @@
 
 // console.log(getBalance(transactions));
 // // Expected Output: 110
+
+// const users = [
+//   { name: "Alex", active: true, logins: 12 },
+//   { name: "Sam", active: false, logins: 45 },
+//   { name: "Jordan", active: true, logins: 28 },
+//   { name: "Taylor", active: true, logins: 5 },
+// ];
+
+// function getTopActiveUsers(userList) {
+//   let output = [];
+//   for (let i = 0; i < userList.length; i++) {
+//     if (users[i].active === true && users[i].logins > 10) {
+//       output.push(users[i].name);
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(getTopActiveUsers(users));
+// // Expected Output: ["Alex", "Jordan"]
+
+// const inventory = [
+//   { item: "Laptops", quantities: [4, 2, 5] },
+//   { item: "Phones", quantities: [10, 15] },
+//   { item: "Monitors", quantities: [1, 1, 0, 2] },
+// ];
+
+// function getTotalStock(items) {
+//   let output = 0;
+//   for (let i = 0; i < items.length; i++) {
+//     for (let j = 0; j < items[i].quantities.length; j++) {
+//       output += items[i].quantities[j];
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(getTotalStock(inventory));
+// // Expected Output: 40
+
+// const departmentSales = [
+//   { department: "Electronics", sales: [120, 300, 150] },
+//   { department: "Clothing", sales: [50, 80] },
+//   { department: "Home", sales: [200, 110, 90, 40] },
+// ];
+
+// function getTopDepartments(departments) {
+//   let newArr = [];
+//   for (let i = 0; i < departments.length; i++) {
+//     let output = 0;
+
+//     for (let j = 0; j < departments[i].sales.length; j++) {
+//       output += departments[i].sales[j];
+//     }
+//     if (output >= 500) {
+//       newArr.push(departments[i].department);
+//     }
+//   }
+//   return newArr;
+// }
+
+// console.log(getTopDepartments(departmentSales));
+// // Expected Output: ["Electronics", "Home"]
+const students = [
+  { name: "Maya", grades: [85, 90, 92] },
+  { name: "Liam", grades: [60, 75, 70] },
+  { name: "Sofia", grades: [95, 88, 91] },
+];
+
+function getHonorRoll(studentList) {
+  let newArr = [];
+  for (let i = 0; i < studentList.length; i++) {
+    let output = 0;
+
+    for (let j = 0; j < studentList[i].grades.length; j++) {
+      output += studentList[i].grades[j];
+    }
+    let average = output / studentList[i].grades.length;
+
+    if (average >= 85) {
+      newArr.push(studentList[i].name);
+    }
+  }
+  return newArr;
+}
+
+console.log(getHonorRoll(students));
+// Expected Output: ["Maya", "Sofia"]
