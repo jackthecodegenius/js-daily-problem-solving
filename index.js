@@ -1734,28 +1734,184 @@
 
 // console.log(getTopDepartments(departmentSales));
 // // Expected Output: ["Electronics", "Home"]
-const students = [
-  { name: "Maya", grades: [85, 90, 92] },
-  { name: "Liam", grades: [60, 75, 70] },
-  { name: "Sofia", grades: [95, 88, 91] },
+// const students = [
+//   { name: "Maya", grades: [85, 90, 92] },
+//   { name: "Liam", grades: [60, 75, 70] },
+//   { name: "Sofia", grades: [95, 88, 91] },
+// ];
+
+// function getHonorRoll(studentList) {
+//   let newArr = [];
+//   for (let i = 0; i < studentList.length; i++) {
+//     let output = 0;
+
+//     for (let j = 0; j < studentList[i].grades.length; j++) {
+//       output += studentList[i].grades[j];
+//     }
+//     let average = output / studentList[i].grades.length;
+
+//     if (average >= 85) {
+//       newArr.push(studentList[i].name);
+//     }
+//   }
+//   return newArr;
+// }
+
+// console.log(getHonorRoll(students));
+// // Expected Output: ["Maya", "Sofia"]
+
+// const stores = [
+//   { name: "Downtown", dailySales: [450, 600, 520] },
+//   { name: "Uptown", dailySales: [700, 300, 850] },
+//   { name: "Suburbs", dailySales: [200, 400, 350] },
+// ];
+
+// function getBusiestStore(storeList) {
+//   let busiestStore = "";
+//   let highestTotal = 0; // Tracks the winning score across all stores
+
+//   for (let i = 0; i < storeList.length; i++) {
+//     let tempVal = 0;
+
+//     for (let j = 0; j < storeList[i].dailySales.length; j++) {
+//       tempVal += storeList[i].dailySales[j];
+//     }
+
+//     // Compare current store's total to the highest total seen so far
+//     if (tempVal > highestTotal) {
+//       highestTotal = tempVal; // Update highest total
+//       busiestStore = storeList[i].name; // Update winning store name
+//     }
+//   }
+
+//   return busiestStore;
+// }
+
+// console.log(getBusiestStore(stores));
+// // Expected Output: "Uptown"
+
+// const players = [
+//   { name: "Alex", scores: [10, 20, 15] },
+//   { name: "Jordan", scores: [50, 40, 30] },
+//   { name: "Taylor", scores: [5, 25, 20] },
+// ];
+
+// function getTopScorer(playerList) {
+//   let playerName = "";
+//   let highestScore = 0;
+
+//   for (let i = 0; i < playerList.length; i++) {
+//     let tempVal = 0;
+
+//     for (let j = 0; j < playerList[i].scores.length; j++) {
+//       tempVal += playerList[i].scores[j];
+//     }
+
+//     if (tempVal > highestScore) {
+//       highestScore = tempVal;
+//       playerName = playerList[i].name;
+//     }
+//   }
+
+//   return playerName;
+// }
+
+// console.log(getTopScorer(players));
+
+// const projects = [
+//   { title: "Alpha", hours: [5, 8, 12] },
+//   { title: "Beta", hours: [20, 15, 10] },
+//   { title: "Gamma", hours: [2, 4, 3] },
+// ];
+
+// function getBiggestProject(projectList) {
+//   let highestNum = 0;
+//   let biggestTitle = "";
+//   for (let i = 0; i < projectList.length; i++) {
+//     let tempVal = 0;
+//     for (let j = 0; j < projectList[i].hours.length; j++) {
+//       tempVal += projectList[i].hours[j];
+//     }
+//     if (tempVal > highestNum) {
+//       highestNum = tempVal;
+//       biggestTitle = projectList[i].title;
+//     }
+//   }
+//   return biggestTitle;
+// }
+
+// console.log(getBiggestProject(projects));
+// // Expected Output: "Beta"
+
+// const userLogs = [
+//   { user: "Alex", actions: ["login", "click", "logout"] },
+//   { user: "Sam", actions: ["login", "click", "click", "click"] },
+//   { user: "Jordan", actions: ["login", "logout"] },
+// ];
+
+// function countTotalClicks(logs) {
+//   let count = 0;
+//   for (let i = 0; i < logs.length; i++) {
+//     for (let j = 0; j < logs[i].actions.length; j++) {
+//       if (logs[i].actions[j] === "click") {
+//         count++;
+//       }
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(countTotalClicks(userLogs));
+// // Expected Output: 4
+
+// const orderHistory = [
+//   { orderId: 101, items: ["book", "pen"] },
+//   { orderId: 102, items: ["laptop"] },
+//   { orderId: 103, items: ["pen", "notebook", "book"] },
+// ];
+
+// function getItemCounts(orders) {
+//   let counts = {}; // 1. Start with an empty object
+
+//   for (let i = 0; i < orders.length; i++) {
+//     for (let j = 0; j < orders[i].items.length; j++) {
+//       let item = orders[i].items[j];
+
+//       if (counts[item]) {
+//         counts[item] += 1; // Already there: add 1
+//       } else {
+//         counts[item] = 1; // First time seeing it: set to 1
+//       }
+//     }
+//   }
+
+//   return counts; // 3. Return the populated object
+// }
+
+// console.log(getItemCounts(orderHistory));
+// // Output: { book: 2, pen: 2, laptop: 1, notebook: 1 }
+
+const surveyResponses = [
+  { user: "UserA", favoriteFruits: ["apple", "banana"] },
+  { user: "UserB", favoriteFruits: ["banana", "mango", "apple"] },
+  { user: "UserC", favoriteFruits: ["apple", "strawberry"] },
 ];
 
-function getHonorRoll(studentList) {
-  let newArr = [];
-  for (let i = 0; i < studentList.length; i++) {
-    let output = 0;
+function countFruitVotes(responses) {
+  let votes = {};
+  for (let i = 0; i < responses.length; i++) {
+    for (let j = 0; j < responses[i].favoriteFruits.length; j++) {
+      let favoriteFru = responses[i].favoriteFruits[j];
 
-    for (let j = 0; j < studentList[i].grades.length; j++) {
-      output += studentList[i].grades[j];
-    }
-    let average = output / studentList[i].grades.length;
-
-    if (average >= 85) {
-      newArr.push(studentList[i].name);
+      if (votes[favoriteFru]) {
+        votes[favoriteFru] += 1;
+      } else {
+        votes[favoriteFru] = 1;
+      }
     }
   }
-  return newArr;
+  return votes;
 }
 
-console.log(getHonorRoll(students));
-// Expected Output: ["Maya", "Sofia"]
+console.log(countFruitVotes(surveyResponses));
+// Expected Output: { apple: 3, banana: 2, mango: 1, strawberry: 1 }
