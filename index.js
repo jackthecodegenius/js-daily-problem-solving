@@ -1891,27 +1891,92 @@
 // console.log(getItemCounts(orderHistory));
 // // Output: { book: 2, pen: 2, laptop: 1, notebook: 1 }
 
-const surveyResponses = [
-  { user: "UserA", favoriteFruits: ["apple", "banana"] },
-  { user: "UserB", favoriteFruits: ["banana", "mango", "apple"] },
-  { user: "UserC", favoriteFruits: ["apple", "strawberry"] },
+// const surveyResponses = [
+//   { user: "UserA", favoriteFruits: ["apple", "banana"] },
+//   { user: "UserB", favoriteFruits: ["banana", "mango", "apple"] },
+//   { user: "UserC", favoriteFruits: ["apple", "strawberry"] },
+// ];
+
+// function countFruitVotes(responses) {
+//   let votes = {};
+//   for (let i = 0; i < responses.length; i++) {
+//     for (let j = 0; j < responses[i].favoriteFruits.length; j++) {
+//       let favoriteFru = responses[i].favoriteFruits[j];
+
+//       if (votes[favoriteFru]) {
+//         votes[favoriteFru] += 1;
+//       } else {
+//         votes[favoriteFru] = 1;
+//       }
+//     }
+//   }
+//   return votes;
+// }
+
+// console.log(countFruitVotes(surveyResponses));
+// // Expected Output: { apple: 3, banana: 2, mango: 1, strawberry: 1 }
+
+// const movieGenres = [
+//   { genre: "Action", ratings: [8, 9, 7, 9] },
+//   { genre: "Comedy", ratings: [6, 5, 7] },
+//   { genre: "Drama", ratings: [9, 8, 10, 9] },
+// ];
+
+// function getTopGenres(genres) {
+//   let output = [];
+//   for (let i = 0; i < genres.length; i++) {
+//     let newVal = 0;
+//     for (let j = 0; j < genres[i].ratings.length; j++) {
+//       newVal += genres[i].ratings[j];
+//     }
+//     let average = newVal / genres[i].ratings.length;
+
+//     if (average >= 8) {
+//       output.push(genres[i].genre);
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(getTopGenres(movieGenres));
+// // Expected Output: ["Action", "Drama"]
+
+// const inventory = [
+//   { category: "Produce", items: ["apple", "banana", "carrot"] },
+//   { category: "Bakery", items: ["bread", "bagel"] },
+//   { category: "Dairy", items: ["milk", "cheese", "yogurt"] },
+// ];
+
+// function getAllItems(storeInventory) {
+//   let allItems = [];
+//   for (let i = 0; i < storeInventory.length; i++) {
+//     for (let j = 0; j < storeInventory[i].items.length; j++) {
+//       allItems.push(storeInventory[i].items[j]);
+//     }
+//   }
+//   return allItems;
+// }
+
+// console.log(getAllItems(inventory));
+// // Expected Output: ["apple", "banana", "carrot", "bread", "bagel", "milk", "cheese", "yogurt"]
+
+const departmentSales = [
+  { dept: "Electronics", sales: [1200, 450, 3000, 800] },
+  { dept: "Clothing", sales: [150, 90, 400] },
+  { dept: "Home", sales: [2200, 1100, 950] },
 ];
 
-function countFruitVotes(responses) {
-  let votes = {};
-  for (let i = 0; i < responses.length; i++) {
-    for (let j = 0; j < responses[i].favoriteFruits.length; j++) {
-      let favoriteFru = responses[i].favoriteFruits[j];
-
-      if (votes[favoriteFru]) {
-        votes[favoriteFru] += 1;
-      } else {
-        votes[favoriteFru] = 1;
+function getBigSales(departments) {
+  let output = [];
+  for (let i = 0; i < departments.length; i++) {
+    for (let j = 0; j < departments[i].sales.length; j++) {
+      if (departments[i].sales[j] >= 1000) {
+        output.push(departments[i].sales[j]);
       }
     }
   }
-  return votes;
+  return output;
 }
 
-console.log(countFruitVotes(surveyResponses));
-// Expected Output: { apple: 3, banana: 2, mango: 1, strawberry: 1 }
+console.log(getBigSales(departmentSales));
+// Expected Output: [1200, 3000, 2200, 1100]
