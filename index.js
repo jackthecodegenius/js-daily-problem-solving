@@ -2022,20 +2022,89 @@
 // console.log(boostedScores);
 // // Expected Output: [80, 95, 65]
 
-const products = [
-  { name: "Laptop", price: 1200, inStock: true },
-  { name: "Phone", price: 800, inStock: false },
-  { name: "Mouse", price: 25, inStock: true },
-  { name: "Keyboard", price: 75, inStock: true },
+// const products = [
+//   { name: "Laptop", price: 1200, inStock: true },
+//   { name: "Phone", price: 800, inStock: false },
+//   { name: "Mouse", price: 25, inStock: true },
+//   { name: "Keyboard", price: 75, inStock: true },
+// ];
+
+// const formattedInStock = products
+//   .filter((item) => item.inStock === true /* check if item.inStock is true */)
+//   .map(
+//     (item) =>
+//       item.name +
+//       " costs $" +
+//       item.price /* return string: item.name + " costs $" + item.price */,
+//   );
+
+// const inventoryCounts = [12, 0, 45, 3, 0, 8, 0, 22];
+
+// function getAvailableStock(counts) {
+//   return counts.filter((item) => item !== 0);
+// }
+
+// console.log(getAvailableStock(inventoryCounts));
+// // Output: [12, 45, 3, 8, 22]
+
+// const users = [
+//   { firstName: "Sam", lastName: "Smith" },
+//   { firstName: "Alex", lastName: "Jones" },
+//   { firstName: "Taylor", lastName: "Brown" },
+// ];
+
+// function getFullNames(userList) {
+//   return userList.map((item) => item.firstName + " " + item.lastName);
+// }
+
+// console.log(getFullNames(users));
+// // Expected Output: ["Sam Smith", "Alex Jones", "Taylor Brown"]
+
+// const orders = [
+//   { id: 101, amount: 250, status: "delivered" },
+//   { id: 102, amount: 45, status: "cancelled" },
+//   { id: 103, amount: 120, status: "delivered" },
+//   { id: 104, amount: 80, status: "pending" },
+// ];
+
+// function getDeliveredAmounts(orderList) {
+//   return orderList
+//     .filter((order) => order.status === "delivered")
+//     .map((order) => order.amount);
+// }
+
+// console.log(getDeliveredAmounts(orders));
+// // Expected Output: [250, 120]
+
+// const temperatures = [32, 18, 25, 12, 30, 15];
+
+// function getHotDays(tempList) {
+//   return tempList.filter((temp) => temp > 19);
+// }
+
+// console.log(getHotDays(temperatures));
+// // Expected Output: [32, 25, 30]
+
+// const prices = [10, 25, 50];
+
+// function formatPrices(priceList) {
+//   return priceList.map((price) => "$" + price);
+// }
+
+// console.log(formatPrices(prices));
+// // Expected Output: ["$10", "$25", "$50"]
+
+const employees = [
+  { name: "Alice", role: "developer" },
+  { name: "Bob", role: "designer" },
+  { name: "Charlie", role: "developer" },
+  { name: "Diana", role: "manager" },
 ];
 
-const formattedInStock = products
-  .filter((item) => item.inStock === true /* check if item.inStock is true */)
-  .map(
-    (item) =>
-      item.name +
-      " costs $" +
-      item.price /* return string: item.name + " costs $" + item.price */,
-  );
+function getDevelopers(employeeList) {
+  return employeeList
+    .filter((employee) => employee.role === "developer")
+    .map((employee) => employee.name);
+}
 
-console.log(formattedInStock);
+console.log(getDevelopers(employees));
