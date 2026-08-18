@@ -1960,23 +1960,82 @@
 // console.log(getAllItems(inventory));
 // // Expected Output: ["apple", "banana", "carrot", "bread", "bagel", "milk", "cheese", "yogurt"]
 
-const departmentSales = [
-  { dept: "Electronics", sales: [1200, 450, 3000, 800] },
-  { dept: "Clothing", sales: [150, 90, 400] },
-  { dept: "Home", sales: [2200, 1100, 950] },
+// const departmentSales = [
+//   { dept: "Electronics", sales: [1200, 450, 3000, 800] },
+//   { dept: "Clothing", sales: [150, 90, 400] },
+//   { dept: "Home", sales: [2200, 1100, 950] },
+// ];
+
+// function getBigSales(departments) {
+//   let output = [];
+//   for (let i = 0; i < departments.length; i++) {
+//     for (let j = 0; j < departments[i].sales.length; j++) {
+//       if (departments[i].sales[j] >= 1000) {
+//         output.push(departments[i].sales[j]);
+//       }
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(getBigSales(departmentSales));
+// // Expected Output: [1200, 3000, 2200, 1100]
+
+// const prices = [15, 80, 42, 100, 5, 60];
+
+// // Fill in the .filter() line below:
+// const cheapPrices = prices.filter(
+//   (price) => price <= 50 /* your condition here */,
+// );
+
+// console.log(cheapPrices);
+// // Expected Output: [15, 42, 5]
+
+// .filter() will create a new array and will loop through it and will check the condition and makes sure it is matching elements
+// so it replaces the foor loop + if conditon
+
+// .map will replace the for loops and transforms the data in a new array
+// .map is like a factory once a item goes in and gets modified, a new modified array will come out
+
+// const basePrices = [10, 20, 30];
+
+// // Use .map() to multiply each price by 1.1:
+// const pricesWithTax = basePrices.map((price) => price * 1.1);
+
+// console.log(pricesWithTax);
+// // Expected Output: [11, 22, 33]
+
+// const numbers = [1, 2, 3, 4, 5, 6];
+
+// const result = numbers
+//   .filter(num => num % 2 === 0)  // Step 1: Keeps [2, 4, 6]
+//   .map(num => num * 10);          // Step 2: Turns them into [20, 40, 60]
+
+// console.log(result);
+
+// const testScores = [40, 75, 90, 48, 60];
+
+// const boostedScores = testScores
+//   .filter((score) => score >= 50 )
+//   .map((score) => score + 5 );
+
+// console.log(boostedScores);
+// // Expected Output: [80, 95, 65]
+
+const products = [
+  { name: "Laptop", price: 1200, inStock: true },
+  { name: "Phone", price: 800, inStock: false },
+  { name: "Mouse", price: 25, inStock: true },
+  { name: "Keyboard", price: 75, inStock: true },
 ];
 
-function getBigSales(departments) {
-  let output = [];
-  for (let i = 0; i < departments.length; i++) {
-    for (let j = 0; j < departments[i].sales.length; j++) {
-      if (departments[i].sales[j] >= 1000) {
-        output.push(departments[i].sales[j]);
-      }
-    }
-  }
-  return output;
-}
+const formattedInStock = products
+  .filter((item) => item.inStock === true /* check if item.inStock is true */)
+  .map(
+    (item) =>
+      item.name +
+      " costs $" +
+      item.price /* return string: item.name + " costs $" + item.price */,
+  );
 
-console.log(getBigSales(departmentSales));
-// Expected Output: [1200, 3000, 2200, 1100]
+console.log(formattedInStock);
