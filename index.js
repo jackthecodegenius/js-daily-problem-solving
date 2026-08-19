@@ -2094,17 +2094,298 @@
 // console.log(formatPrices(prices));
 // // Expected Output: ["$10", "$25", "$50"]
 
-const employees = [
-  { name: "Alice", role: "developer" },
-  { name: "Bob", role: "designer" },
-  { name: "Charlie", role: "developer" },
-  { name: "Diana", role: "manager" },
-];
+// const employees = [
+//   { name: "Alice", role: "developer" },
+//   { name: "Bob", role: "designer" },
+//   { name: "Charlie", role: "developer" },
+//   { name: "Diana", role: "manager" },
+// ];
 
-function getDevelopers(employeeList) {
-  return employeeList
-    .filter((employee) => employee.role === "developer")
-    .map((employee) => employee.name);
+// function getDevelopers(employeeList) {
+//   return employeeList
+//     .filter((employee) => employee.role === "developer")
+//     .map((employee) => employee.name);
+// }
+
+// console.log(getDevelopers(employees));
+
+// const inventory = [
+//   { item: "Laptop", count: 5 },
+//   { item: "Keyboard", count: 0 },
+//   { item: "Monitor", count: 12 },
+//   { item: "Mouse", count: 0 },
+// ];
+
+// function getInStockItems(itemList) {
+//   return itemList.filter((item) => item.count > 4).map((item) => item.item);
+// }
+
+// console.log(getInStockItems(inventory));
+// // Expected Output: ["Laptop", "Monitor"]
+
+// const transactions = [
+//   { type: "deposit", amount: 100 },
+//   { type: "withdrawal", amount: 50 },
+//   { type: "deposit", amount: 200 },
+//   { type: "withdrawal", amount: 30 },
+// ];
+
+// function getDepositAmounts(transactionList) {
+//   return transactionList
+//     .filter((item) => item.amount > 99)
+//     .map((item) => item.amount);
+// }
+
+// console.log(getDepositAmounts(transactions));
+// // Expected Output: [100, 200]
+
+// const books = [
+//   { title: "Dune", pageCount: 500, read: true },
+//   { title: "The Hobbit", pageCount: 300, read: false },
+//   { title: "1984", pageCount: 328, read: true },
+//   { title: "Dracula", pageCount: 418, read: false },
+// ];
+
+// function getReadBookTitles(bookList) {
+//   return bookList
+//     .filter((item) => item.read === true)
+//     .map((item) => item.title);
+// }
+
+// console.log(getReadBookTitles(books));
+// // Expected Output: ["Dune", "1984"]
+
+// const movies = [
+//   { title: "Inception", rating: 8.8, genre: "Sci-Fi" },
+//   { title: "The Dark Knight", rating: 9.0, genre: "Action" },
+//   { title: "Interstellar", rating: 8.6, genre: "Sci-Fi" },
+//   { title: "Tenet", rating: 7.3, genre: "Sci-Fi" },
+// ];
+
+// function getTopSciFiMovies(movieList) {
+//   return movieList
+//     .filter((item) => item.genre === "Sci-Fi" && item.rating > 8.4)
+//     .map((item) => item.title);
+// }
+
+// console.log(getTopSciFiMovies(movies));
+// // Expected Output: ["Inception", "Interstellar"]
+
+// const players = [
+//   { name: "Alex", score: 150, active: true },
+//   { name: "Jordan", score: 90, active: true },
+//   { name: "Taylor", score: 200, active: false },
+//   { name: "Morgan", score: 120, active: true },
+// ];
+
+// function getActiveHighScorers(playerList) {
+//   return playerList
+//     .filter((item) => item.score > 99 && item.active === true)
+//     .map((item) => item.name);
+// }
+
+// console.log(getActiveHighScorers(players));
+// // Expected Output: ["Alex", "Morgan"]
+
+// const products = [
+//   { name: "Phone", price: 800, category: "electronics" },
+//   { name: "Shirt", price: 30, category: "clothing" },
+//   { name: "Laptop", price: 1200, category: "electronics" },
+//   { name: "Socks", price: 10, category: "clothing" },
+// ];
+
+// function getAffordableClothing(productList) {
+//   return productList
+//     .filter((item) => item.price < 51 && item.category === "clothing")
+//     .map((item) => item.name);
+// }
+
+// console.log(getAffordableClothing(products));
+// // Expected Output: ["Shirt", "Socks"]
+
+// const courseList = [
+//   { title: "HTML Basics", students: 120, published: true },
+//   { title: "Advanced CSS", students: 45, published: false },
+//   { title: "JS Fundamentals", students: 200, published: true },
+//   { title: "Python Intro", students: 80, published: true },
+// ];
+
+// function getPopularPublishedCourses(courses) {
+//   return courses
+//     .filter((item) => item.published === true && item.students > 99)
+//     .map((item) => item.title);
+// }
+
+// console.log(getPopularPublishedCourses(courseList));
+// // Expected Output: ["HTML Basics", "JS Fundamentals"]
+
+// const orderHistory = [
+//   { orderId: 501, total: 150, status: "completed" },
+//   { orderId: 502, total: 300, status: "processing" },
+//   { orderId: 503, total: 450, status: "completed" },
+//   { orderId: 504, total: 80, status: "completed" },
+// ];
+
+// function getHighValueCompletedOrders(orders) {
+//   return orders
+//     .filter((item) => item.status === "completed" && item.total > 99)
+//     .map((item) => item.orderId);
+// }
+
+// console.log(getHighValueCompletedOrders(orderHistory));
+// // Expected Output: [501, 503]
+
+// const cart = [
+//   { name: "Keyboard", price: 50 },
+//   { name: "Mouse", price: 25 },
+//   { name: "Monitor", price: 200 },
+// ];
+
+// function getTotalPrice(cartItems) {
+//   return cartItems.reduce((accumulator, item) => {
+//     return accumulator + item.price;
+//   }, 0);
+// }
+
+// console.log(getTotalPrice(cart));
+// // Expected Output: 275
+
+// const expenses = [
+//   { description: "Groceries", amount: 120 },
+//   { description: "Gas", amount: 45 },
+//   { description: "Internet", amount: 60 },
+// ];
+
+// function getTotalExpenses(expenseList) {
+//   return expenseList.reduce((acc, item) => {
+//     return acc + item.amount;
+//   }, 0);
+// }
+
+// console.log(getTotalExpenses(expenses));
+// // Expected Output: 225
+
+// const salaries = [
+//   { name: "Sarah", pay: 3000 },
+//   { name: "David", pay: 2500 },
+//   { name: "Emma", pay: 3500 },
+// ];
+
+// function getTotalPayroll(staffList) {
+//   return staffList.reduce((acc, item) => {
+//     return acc + item.pay;
+//   }, 0);
+// }
+
+// console.log(getTotalPayroll(salaries));
+// // Expected Output: 9000
+
+// const inventory = [
+//   { item: "Apples", price: 2, quantity: 10 },
+//   { item: "Oranges", price: 3, quantity: 5 },
+//   { item: "Bananas", price: 1, quantity: 20 },
+// ];
+
+// function getTotalInventoryValue(items) {
+//   return items.reduce((acc, item) => {
+//     return acc + item.price * item.quantity;
+//   }, 0);
+// }
+
+// console.log(getTotalInventoryValue(inventory));
+// // Expected Output: 55
+
+// const orderItems = [
+//   { product: "T-Shirt", price: 20, count: 3 },
+//   { product: "Jeans", price: 50, count: 2 },
+//   { product: "Cap", price: 15, count: 4 },
+// ];
+
+// function getOrderTotal(orders) {
+//   return orders.reduce((acc, item) => {
+//     return acc + item.price * item.count;
+//   }, 0);
+// }
+
+// console.log(getOrderTotal(orderItems));
+// // Expected Output: 220
+
+// const transactions = [
+//   { type: "deposit", amount: 100 },
+//   { type: "withdrawal", amount: 40 },
+//   { type: "deposit", amount: 250 },
+//   { type: "withdrawal", amount: 60 },
+// ];
+
+// function getTotalDeposits(transactionList) {
+//   return transactionList
+//     .filter((item) => item.type === "deposit")
+//     .reduce((acc, item) => acc + item.amount, 0);
+// }
+
+// console.log(getTotalDeposits(transactions));
+// // Expected Output: 350
+
+// const employees = [
+//   { name: "Alice", salary: 80000, department: "Engineering" },
+//   { name: "Bob", salary: 50000, department: "Marketing" },
+//   { name: "Charlie", salary: 95000, department: "Engineering" },
+//   { name: "Diana", salary: 60000, department: "Design" },
+// ];
+
+// function getTotalEngineeringPayroll(staff) {
+//   return staff
+//     .filter((item) => item.department === "Engineering")
+//     .reduce((acc, item) => acc + item.salary, 0);
+// }
+
+// console.log(getTotalEngineeringPayroll(employees));
+// // Expected Output: 175000
+
+// const fruitBasket = ["apple", "banana", "apple", "orange", "banana", "apple"];
+
+// function countFruits(fruits) {
+//   return fruits.reduce((acc, fruit) => {
+//     if (acc[fruit]) {
+//       acc[fruit] += 1;
+//     } else {
+//       acc[fruit] = 1;
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(countFruits(fruitBasket));
+// // Expected Output: { apple: 3, banana: 2, orange: 1 }
+
+// const votes = ["yes", "no", "yes", "yes", "no", "maybe", "yes"];
+
+// function countVotes(voteList) {
+//   return voteList.reduce((acc, item) => {
+//     if (acc[item]) {
+//       acc[item] += 1;
+//     } else {
+//       acc[item] = 1;
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(countVotes(votes));
+// // Expected Output: { yes: 4, no: 2, maybe: 1 }
+
+const userRoles = ["admin", "user", "user", "editor", "admin", "user"];
+
+function countRoles(roles) {
+  return roles.reduce((acc, item) => {
+    if (acc[item]) {
+      acc[item] += 1;
+    } else {
+      acc[item] = 1;
+    }
+    return acc;
+  }, {});
 }
 
-console.log(getDevelopers(employees));
+console.log(countRoles(userRoles));
+// Expected Output: { admin: 2, user: 3, editor: 1 }
