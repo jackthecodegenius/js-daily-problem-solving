@@ -2374,18 +2374,216 @@
 // console.log(countVotes(votes));
 // // Expected Output: { yes: 4, no: 2, maybe: 1 }
 
-const userRoles = ["admin", "user", "user", "editor", "admin", "user"];
+// const userRoles = ["admin", "user", "user", "editor", "admin", "user"];
 
-function countRoles(roles) {
-  return roles.reduce((acc, item) => {
-    if (acc[item]) {
-      acc[item] += 1;
+// function countRoles(roles) {
+//   return roles.reduce((acc, item) => {
+//     if (acc[item]) {
+//       acc[item] += 1;
+//     } else {
+//       acc[item] = 1;
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(countRoles(userRoles));
+// // Expected Output: { admin: 2, user: 3, editor: 1 }
+
+// const feedback = ["pass", "fail", "pass", "pass", "fail", "pass"];
+
+// function countResults(results) {
+//   return results.reduce((acc, item) => {
+//     if (acc[item]) {
+//       acc[item] += 1;
+//     } else {
+//       acc[item] = 1;
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(countResults(feedback));
+// // Expected Output: { pass: 4, fail: 2 }
+
+// const people = [
+//   { name: "Sarah", role: "Developer" },
+//   { name: "Tom", role: "Designer" },
+//   { name: "Jake", role: "Developer" },
+// ];
+
+// function groupByRole(staff) {
+//   return staff.reduce((acc, item) => {
+//     // 1. Have we seen this role before?
+//     if (acc[item.role]) {
+//       // Yes -> Push the name into the existing array
+//       acc[item.role].push(item.name);
+//     } else {
+//       // No -> Create a new array with this name inside it
+//       acc[item.role] = [item.name];
+//     }
+
+//     // Always pass the object to the next iteration
+//     return acc;
+//   }, {});
+// }
+
+// console.log(groupByRole(people));
+
+// const animals = [
+//   { name: "Dog", type: "Mammal" },
+//   { name: "Eagle", type: "Bird" },
+//   { name: "Cat", type: "Mammal" },
+//   { name: "Parrot", type: "Bird" },
+// ];
+
+// function groupByType(animalList) {
+//   return animalList.reduce((acc, item) => {
+//     if (acc[item.type]) {
+//       acc[item.type].push(item.name);
+//     } else {
+//       acc[item.type] = [item.name];
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(groupByType(animals));
+// // Expected Output:
+// // {
+// //   Mammal: ["Dog", "Cat"],
+// //   Bird: ["Eagle", "Parrot"]
+// // }
+
+// const inventory = [
+//   { item: "Apple", category: "Fruit" },
+//   { item: "Carrot", category: "Vegetable" },
+//   { item: "Banana", category: "Fruit" },
+//   { item: "Broccoli", category: "Vegetable" },
+// ];
+
+// function groupByCategory(items) {
+//   return items.reduce((acc, food) => {
+//     if (acc[food.category]) {
+//       acc[food.category].push(food.item);
+//     } else {
+//       acc[food.category] = [food.item];
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(groupByCategory(inventory));
+// // Expected Output:
+// // {
+// //   Fruit: ["Apple", "Banana"],
+// //   Vegetable: ["Carrot", "Broccoli"]
+// // }
+
+// const scores = [
+//   { student: "Alex", score: 85 },
+//   { student: "Sam", score: 45 },
+//   { student: "Taylor", score: 90 },
+//   { student: "Jordan", score: 55 },
+// ];
+
+// function groupPassFail(results) {
+//   return results.reduce((acc, stud) => {
+//     // 1. Determine the category key name
+//     const status = stud.score >= 60 ? "Pass" : "Fail";
+
+//     // 2. Use that key just like previous problems
+//     if (acc[status]) {
+//       acc[status].push(stud.student);
+//     } else {
+//       acc[status] = [stud.student];
+//     }
+
+//     return acc;
+//   }, {});
+// }
+
+// console.log(groupPassFail(scores));
+// // Expected Output:
+// // {
+// //   Pass: ["Alex", "Taylor"],
+// //   Fail: ["Sam", "Jordan"]
+// // }
+
+// const transactions = [
+//   { description: "Groceries", amount: -50 },
+//   { description: "Salary", amount: 2000 },
+//   { description: "Coffee", amount: -5 },
+//   { description: "Bonus", amount: 500 },
+// ];
+
+// function groupTransactions(list) {
+//   return list.reduce((acc, item) => {
+//     const status = item.amount >= 0 ? "Income" : "Expense";
+
+//     if (acc[status]) {
+//       acc[status].push(item.description);
+//     } else {
+//       acc[status] = [item.description];
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(groupTransactions(transactions));
+// // Expected Output:
+// // {
+// //   Income: ["Salary", "Bonus"],
+// //   Expense: ["Groceries", "Coffee"]
+// // }
+
+// const temperatures = [
+//   { day: "Monday", temp: 32 },
+//   { day: "Tuesday", temp: 18 },
+//   { day: "Wednesday", temp: 28 },
+//   { day: "Thursday", temp: 15 },
+// ];
+
+// function groupWeather(days) {
+//   return days.reduce((acc, item) => {
+//     const status = item.temp >= 25 ? "Hot" : "Cold";
+
+//     if (acc[status]) {
+//       acc[status].push(item.day);
+//     } else {
+//       acc[status] = [item.day];
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(groupWeather(temperatures));
+// // Expected Output:
+// // {
+// //   Hot: ["Monday", "Wednesday"],
+// //   Cold: ["Tuesday", "Thursday"]
+// // }
+
+const testScores = [
+  { student: "Alex", score: 85 },
+  { student: "Sam", score: 45 },
+  { student: "Taylor", score: 90 },
+  { student: "Jordan", score: 55 },
+];
+
+function tallyResults(results) {
+  return results.reduce((acc, item) => {
+    const status = item.score >= 60 ? "Pass" : "Fail";
+
+    if (acc[status]) {
+      acc[status] += 1;
     } else {
-      acc[item] = 1;
+      acc[status] = 1;
     }
     return acc;
   }, {});
 }
 
-console.log(countRoles(userRoles));
-// Expected Output: { admin: 2, user: 3, editor: 1 }
+console.log(tallyResults(testScores));
+// Expected Output:
+// { Pass: 2, Fail: 2 }
