@@ -2564,26 +2564,192 @@
 // //   Cold: ["Tuesday", "Thursday"]
 // // }
 
-const testScores = [
-  { student: "Alex", score: 85 },
-  { student: "Sam", score: 45 },
-  { student: "Taylor", score: 90 },
-  { student: "Jordan", score: 55 },
+// const testScores = [
+//   { student: "Alex", score: 85 },
+//   { student: "Sam", score: 45 },
+//   { student: "Taylor", score: 90 },
+//   { student: "Jordan", score: 55 },
+// ];
+
+// function tallyResults(results) {
+//   return results.reduce((acc, item) => {
+//     const status = item.score >= 60 ? "Pass" : "Fail";
+
+//     if (acc[status]) {
+//       acc[status] += 1;
+//     } else {
+//       acc[status] = 1;
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(tallyResults(testScores));
+// // Expected Output:
+// // { Pass: 2, Fail: 2 }
+
+// const users = [
+//   { username: "alex99", isActive: true },
+//   { username: "sam_dev", isActive: false },
+//   { username: "taylor_code", isActive: true },
+//   { username: "jordan_k", isActive: false },
+// ];
+
+// function getActiveUsernames(userList) {
+//   return userList
+//     .filter((item) => item.isActive === true)
+//     .map((item) => item.username.toUpperCase());
+// }
+
+// console.log(getActiveUsernames(users));
+// // Output: ["ALEX99", "TAYLOR_CODE"]
+
+// const users = [
+//   { userId: "u1", name: "Alice", role: "Admin" },
+//   { userId: "u2", name: "Bob", role: "User" },
+//   { userId: "u3", name: "Charlie", role: "User" },
+// ];
+// function normalizeUsers(userList) {
+//   return userList.reduce((acc, item) => {
+//     acc[item.userId] = item;
+//     return acc;
+//   }, {});
+// }
+
+// console.log(normalizeUsers(users));
+// // Expected Output:
+// // {
+// //   u1: { userId: "u1", name: "Alice", role: "Admin" },
+// //   u2: { userId: "u2", name: "Bob", role: "User" },
+// //   u3: { userId: "u3", name: "Charlie", role: "User" }
+// // }
+
+// //acc[item.id] = item;
+
+// const books = [
+//   { isbn: "978-1", title: "Atomic Habits", author: "James Clear" },
+//   { isbn: "978-2", title: "Deep Work", author: "Cal Newport" },
+//   { isbn: "978-3", title: "Clean Code", author: "Robert Martin" },
+// ];
+
+// function normalizeBooks(bookList) {
+//   return bookList.reduce((acc, item) => {
+//     acc[item.isbn] = item;
+//     return acc;
+//   }, {});
+// }
+
+// console.log(normalizeBooks(books));
+// // Expected Output:
+// // {
+// //   "978-1": { isbn: "978-1", title: "Atomic Habits", author: "James Clear" },
+// //   "978-2": { isbn: "978-2", title: "Deep Work", author: "Cal Newport" },
+// //   "978-3": { isbn: "978-3", title: "Clean Code", author: "Robert Martin" }
+// // }
+
+// const members = [
+//   { id: "m1", name: "Alex", email: "alex@test.com" },
+//   { id: "m2", name: "Sam", email: "sam@test.com" },
+//   { id: "m3", name: "Taylor", email: "taylor@test.com" },
+// ];
+
+// function mapEmailsById(list) {
+//   return list.reduce((acc, item) => {
+//     acc[item.id] = item.email;
+//     return acc;
+//   }, {});
+// }
+
+// console.log(mapEmailsById(members));
+// // Expected Output:
+// // {
+// //   m1: "alex@test.com",
+// //   m2: "sam@test.com",
+// //   m3: "taylor@test.com"
+// // }
+
+// const players = [
+//   { username: "shadow99", score: 450 },
+//   { username: "pixel_hero", score: 720 },
+//   { username: "nova_rider", score: 310 },
+// ];
+
+// function mapScoresByUsername(playerList) {
+//   return playerList.reduce((acc, item) => {
+//     acc[item.username] = item.score;
+//     return acc;
+//   }, {});
+// }
+
+// console.log(mapScoresByUsername(players));
+// // Expected Output:
+// // {
+// //   shadow99: 450,
+// //   pixel_hero: 720,
+// //   nova_rider: 310
+// // }
+
+// const inventory = [
+//   { sku: "A1", name: "Laptop", inStock: true },
+//   { sku: "A2", name: "Headphones", inStock: false },
+//   { sku: "A3", name: "Keyboard", inStock: true },
+// ];
+
+// function normalizeInStock(items) {
+//   return items
+//     .filter((item) => item.inStock === true)
+//     .reduce((acc, item) => {
+//       acc[item.sku] = item;
+//       return acc;
+//     }, {});
+// }
+
+// console.log(normalizeInStock(inventory));
+// // Expected Output:
+// // {
+// //   A1: { sku: "A1", name: "Laptop", inStock: true },
+// //   A3: { sku: "A3", name: "Keyboard", inStock: true }
+// // }
+
+// const transactions = [
+//   { id: "t1", type: "income", amount: 100 },
+//   { id: "t2", type: "expense", amount: 30 },
+//   { id: "t3", type: "income", amount: 250 },
+// ];
+
+// function normalizeIncome(list) {
+//   return list
+//     .filter((item) => item.type === "income")
+//     .reduce((acc, item) => {
+//       acc[item.id] = item;
+//       return acc;
+//     }, {});
+// }
+
+// console.log(normalizeIncome(transactions));
+// // Expected Output:
+// // {
+// //   t1: { id: "t1", type: "income", amount: 100 },
+// //   t3: { id: "t3", type: "income", amount: 250 }
+// // }
+
+const staff = [
+  { id: "e1", name: "Sarah" },
+  { id: "e2", name: "Michael" },
+  { id: "e3", name: "Jessica" },
 ];
 
-function tallyResults(results) {
-  return results.reduce((acc, item) => {
-    const status = item.score >= 60 ? "Pass" : "Fail";
-
-    if (acc[status]) {
-      acc[status] += 1;
-    } else {
-      acc[status] = 1;
-    }
+function normalizeUppercaseNames(employeeList) {
+  return employeeList.reduce((acc, item) => {
+    acc[item.id] = item.name.toUpperCase();
     return acc;
   }, {});
 }
 
-console.log(tallyResults(testScores));
+console.log(normalizeUppercaseNames(staff));
 // Expected Output:
-// { Pass: 2, Fail: 2 }
+// {
+//   e1: "SARAH",
+//   e2: "MICHAEL",
+//   e3: "JESSICA"
+// }
