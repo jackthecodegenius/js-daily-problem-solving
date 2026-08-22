@@ -2733,23 +2733,72 @@
 // //   t3: { id: "t3", type: "income", amount: 250 }
 // // }
 
-const staff = [
-  { id: "e1", name: "Sarah" },
-  { id: "e2", name: "Michael" },
-  { id: "e3", name: "Jessica" },
-];
+// const staff = [
+//   { id: "e1", name: "Sarah" },
+//   { id: "e2", name: "Michael" },
+//   { id: "e3", name: "Jessica" },
+// ];
 
-function normalizeUppercaseNames(employeeList) {
-  return employeeList.reduce((acc, item) => {
-    acc[item.id] = item.name.toUpperCase();
-    return acc;
-  }, {});
-}
-
-console.log(normalizeUppercaseNames(staff));
-// Expected Output:
-// {
-//   e1: "SARAH",
-//   e2: "MICHAEL",
-//   e3: "JESSICA"
+// function normalizeUppercaseNames(employeeList) {
+//   return employeeList.reduce((acc, item) => {
+//     acc[item.id] = item.name.toUpperCase();
+//     return acc;
+//   }, {});
 // }
+
+// console.log(normalizeUppercaseNames(staff));
+// // Expected Output:
+// // {
+// //   e1: "SARAH",
+// //   e2: "MICHAEL",
+// //   e3: "JESSICA"
+// // }
+
+// const orders = [
+//   { orderId: "ord_101", item: "Keyboard", total: 75 },
+//   { orderId: "ord_102", item: "Mouse", total: 45 },
+//   { orderId: "ord_103", item: "Monitor", total: 250 },
+// ];
+
+// function normalizeOrders(orderList) {
+//   return orderList.reduce((acc, item) => {
+//     acc[item.orderId] = item;
+
+//     return acc;
+//   }, {});
+// }
+
+// console.log(normalizeOrders(orders));
+// // Expected Output:
+// // {
+// //   ord_101: { orderId: "ord_101", item: "Keyboard", total: 75 },
+// //   ord_102: { orderId: "ord_102", item: "Mouse", total: 45 },
+// //   ord_103: { orderId: "ord_103", item: "Monitor", total: 250 }
+// // }
+
+// async function getWeather() {
+//   try {
+//     const response = await fetch("https://api.weather.com/brisbane");
+//     const data = await response.json();
+
+//     console.log("Temperature:", data.temp);
+//   } catch (err) {
+//     console.log("Failed to load weather");
+//   }
+// }
+
+const priceButton = document.querySelector("#fetch-price-btn");
+const priceHeader = document.querySelector("#price-display");
+
+priceButton.addEventListener("click", async function () {
+  try {
+    priceHeader.textContent = "Loading...";
+
+    const response = await fetch("https://api.store.com/item/1");
+    const data = await response.json();
+
+    priceHeader.textContent = "Loaded ${data.name} and ${data.price}";
+  } catch (error) {
+    priceHeader.textContent = "failed to load price";
+  }
+});
