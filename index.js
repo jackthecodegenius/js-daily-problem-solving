@@ -2787,18 +2787,52 @@
 //   }
 // }
 
-const priceButton = document.querySelector("#fetch-price-btn");
-const priceHeader = document.querySelector("#price-display");
+// const priceButton = document.querySelector("#fetch-price-btn");
+// const priceHeader = document.querySelector("#price-display");
 
-priceButton.addEventListener("click", async function () {
-  try {
-    priceHeader.textContent = "Loading...";
+// priceButton.addEventListener("click", async function () {
+//   try {
+//     priceHeader.textContent = "Loading...";
 
-    const response = await fetch("https://api.store.com/item/1");
-    const data = await response.json();
+//     const response = await fetch("https://api.store.com/item/1");
+//     const data = await response.json();
 
-    priceHeader.textContent = "Loaded ${data.name} and ${data.price}";
-  } catch (error) {
-    priceHeader.textContent = "failed to load price";
-  }
-});
+//     priceHeader.textContent = "Loaded ${data.name} and ${data.price}";
+//   } catch (error) {
+//     priceHeader.textContent = "failed to load price";
+//   }
+// });
+
+// function reverseString(str) {
+//   // 1. "hello" becomes ["h", "e", "l", "l", "o"]
+//   const splitArray = str.split("");
+
+//   // 2. ["h", "e", "l", "l", "o"] becomes ["o", "l", "l", "e", "h"]
+//   const reversedArray = splitArray.reverse();
+
+//   // 3. ["o", "l", "l", "e", "h"] becomes "olleh"
+//   const finalString = reversedArray.join("");
+
+//   return finalString;
+// }
+
+// console.log(reverseString("hello")); // "olleh"
+
+// const sentence = "learning to code step by step";
+
+// const strArray = sentence.split(" ");
+// console.log(strArray);
+// const words = ["I", "love", "coding"];
+
+// const newStr = words.join(" ");
+// console.log(newStr);
+
+// const word = "code";
+
+// const newStr = word.split("");
+
+// const revStr = newStr.reverse("");
+
+// const finStr = revStr.join("");
+
+// console.log(finStr);
