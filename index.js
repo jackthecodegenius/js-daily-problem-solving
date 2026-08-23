@@ -2836,3 +2836,75 @@
 // const finStr = revStr.join("");
 
 // console.log(finStr);
+
+// // Q1
+// const inventory = "apple,banana,orange,grape";
+
+// const newArr = inventory.split(",");
+
+// console.log(newArr);
+
+// // Q2
+
+// const scores = [10, 20, 30, 40];
+
+// console.log(scores[0]);
+
+// console.log(scores[3]);
+
+// // Q3
+
+// // arrays are typically a list of values of the same type of data inside, you're able to use .push to push values into a array or .pop to take them out and able to do .shift .unshift
+
+// // string is just 1 value and its just text saved as a value or can be mumbers, but it can a single character or even a whole sentence
+
+// function longestWord(input) {
+//   let output = "";
+//   const newArr = input.split(" ");
+
+//   for (let i = 0; i < newArr.length; i++) {
+//     if (newArr[i].length >= output.length) {
+//       output = newArr[i];
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(longestWord("I love learning how to code"));
+
+// function countVowels(input) {
+//   let output = 0;
+//   const newArray = input.split("");
+
+//   for (let i = 0; i < newArray.length; i++) {
+//     if ("aeiou".includes(newArray[i])) {
+//       output++;
+//     }
+//   }
+
+//   return output;
+// }
+
+// console.log(countVowels("Hello World"));
+
+// function countLetter(input, target) {
+//   let output = 0;
+
+//   for (let i = 0; i < input.length; i++) {
+//     if (target === input[i]) {
+//       output++;
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(countLetter("banana", "a"));
+
+// function reverseStr(input) {
+//   const newArr = input.split("");
+//   const revArr = newArr.reverse();
+//   const joinArr = revArr.join("");
+//   return joinArr;
+// }
+
+// console.log(reverseStr("hello"));
