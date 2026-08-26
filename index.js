@@ -3141,13 +3141,135 @@
 // console.log(findLastIndex(["apple", "banana", "cherry", "banana"], "banana"));
 // // Expected Output: 3
 
-function removeDuplicates(input) {
-  let output = [];
-  for (let i = 0; i < input.length; i++) {
-    output.push(input[i]);
+// function removeDuplicates(input) {
+//   let output = [];
+//   for (let i = 0; i < input.length; i++) {
+//     if (!output.includes(input[i])) {
+//       output.push(input[i]);
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(removeDuplicates(["apple", "banana", "apple", "cherry", "banana"]));
+// // Expected Output: ["apple", "banana", "cherry"]
+
+// function countOccurrences(input, target) {
+//   let output = 0;
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] === target) {
+//       output++;
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(
+//   countOccurrences(["apple", "banana", "apple", "cherry", "apple"], "apple"),
+// );
+
+// function areAllEven(input) {
+//   let output = true;
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] % 2 !== 0) { // Check if it's odd
+//       output = false;
+//       break; // Optional optimization: stop early once you find a non-even number!
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(areAllEven([2, 4, 6, 8])); // true
+// console.log(areAllEven([2, 3, 6, 8])); // false
+
+// function hasOddNumber(input) {
+//   let output = false;
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] % 2 !== 0) {
+//       output = true;
+//       break;
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(hasOddNumber([2, 4, 6, 8])); // Expected: false
+// console.log(hasOddNumber([2, 3, 6, 8])); // Expected: true
+
+// function findMaxIndex(input) {
+//   let output = 0; // Starts as index 0
+//   for (let i = 1; i < input.length; i++) {
+//     if (input[i] > input[output]) {
+//       // Compare value against value!
+//       output = i; // Save the new index
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(findMaxIndex([5, 12, 3, 22, 8]));
+// // Expected Output: 3
+
+// function titleCase(input) {
+//   let words = input.split(" ");
+//   let outputArr = [];
+
+//   for (let i = 0; i < words.length; i++) {
+
+//     let firstLetter = words[i].slice(0, 1).toUpperCase();
+
+//     let restOfWord = words[i].slice(1);
+
+//     outputArr.push(firstLetter + restOfWord);
+//   }
+
+//   return outputArr.join(" ");
+// }
+
+// console.log(titleCase("hello world from javascript"));
+// // Expected Output: "Hello World From Javascript"
+
+// function keepOnlyFirst(input) {
+//   // Start at index 0 ("apple"), and stop right before index 1 ("banana")
+//   let output = input.slice(0, 1);
+
+//   return output;
+// }
+
+// console.log(keepOnlyFirst(["apple", "banana", "cherry", "date"]));
+// // Expected Output: ["apple"]
+
+// function moveFirstLetterToEnd(input) {
+//   let output = "";
+
+//   // Use .slice() to grab the pieces and rearrange them!
+//   let firstLetter = input.slice(0, 1);
+
+//   let restOfWord = input.slice(1);
+
+//   output += restOfWord + firstLetter;
+
+//   return output;
+// }
+
+// console.log(moveFirstLetterToEnd("apple"));
+// // Expected Output: "pplea"
+
+// console.log(moveFirstLetterToEnd("banana"));
+// // Expected Output: "ananab"
+
+function truncateString(input, maxLength) {
+  let output = "";
+
+  if (input.length > maxLength) {
+    return (output += input.slice(0, maxLength) + "...");
+  } else {
+    return (output = input);
   }
-  return output;
 }
 
-console.log(removeDuplicates(["apple", "banana", "apple", "cherry", "banana"]));
-// Expected Output: ["apple", "banana", "cherry"]
+console.log(truncateString("hello world", 5));
+// Expected Output: "hello..."
+
+console.log(truncateString("coding", 10));
+// Expected Output: "coding" (because it's already shorter than 10!)
