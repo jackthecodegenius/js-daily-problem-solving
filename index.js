@@ -2908,3 +2908,246 @@
 // }
 
 // console.log(reverseStr("hello"));
+
+// function capitalizeWords(input) {
+//   // Step 1: Split the sentence into an array of words by spaces
+//   const words = input.split(" ");
+//   let output = [];
+
+//   // Step 2: Loop through each word in the array
+//   for (let i = 0; i < words.length; i++) {
+//     let currentWord = words[i];
+
+//     // Step 3: Capitalize the first letter and grab the rest of the word
+//     let capitalized = currentWord[0].toUpperCase() + currentWord.slice(1);
+
+//     // Step 4: Add the fixed word to our output array
+//     output.push(capitalized);
+//   }
+
+//   // Step 5: Join the array back into a single string with spaces
+//   return output.join(" ");
+// }
+
+// console.log(capitalizeWords("hello world from javascript"));
+// // Output: "Hello World From Javascript"
+
+// function findMin(input) {
+//   let output = input[0];
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] < output) {
+//       output = input[i];
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(findMin([14, 7, 22, 3, 41]));
+
+// function sumArray(input) {
+//   let output = 0;
+//   for (let i = 0; i < input.length; i++) {
+//     output += input[i];
+//   }
+//   return output;
+// }
+
+// console.log(sumArray([1, 2, 3, 4, 5]));
+
+// function countEven(input) {
+//   let output = 0;
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] % 2 === 0) {
+//       output++;
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(countEven([1, 2, 3, 4, 5, 6]));
+
+// function doubleNumbers(input) {
+//   let newArr = [];
+//   let output = 0;
+//   for (let i = 0; i < input.length; i++) {
+//     output = input[i] * 2;
+//     newArr.push(output);
+//   }
+//   return newArr;
+// }
+
+// console.log(doubleNumbers([1, 2, 3, 4]));
+// // Expected Output: [2, 4, 6, 8]
+
+// function filterLongWords(input) {
+//   let words = input.split(" ");
+//   let newArr = [];
+//   for (let i = 0; i < words.length; i++) {
+//     if (words[i].length > 3) {
+//       newArr.push(words[i]);
+//     }
+//   }
+//   return newArr;
+// }
+
+// console.log(filterLongWords(["cat", "elephant", "dog", "hippopotamus"]));
+// // Expected Output: ["elephant", "hippopotamus"]
+
+// function getInitials(input) {
+//   let newArr = [];
+//   for (let i = 0; i < input.length; i++) {
+//     newArr.push(input[i][0]);
+//   }
+//   return newArr;
+// }
+
+// console.log(getInitials(["John", "Doe"]));
+// // Expected Output: ["J", "D"]
+
+// function exclaimWords(input) {
+//   let newArr = [];
+//   for (let i = 0; i < input.length; i++) {
+//     newArr.push(input[i] + "!");
+//   }
+//   return newArr;
+// }
+
+// console.log(exclaimWords(["hello", "world"]));
+// // Expected Output: ["hello!", "world!"]
+
+// function findLongestWord(input) {
+//   let output = "";
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i].length > output.length) {
+//       output = input[i];
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(findLongestWord(["cat", "elephant", "dog", "hippopotamus"]));
+// // Expected Output: "hippopotamus"
+
+// function removeVowels(input) {
+//   let output = "";
+//   for (let i = 0; i < input.length; i++) {
+//     if (!"aeiou".includes(input[i])) {
+//       output += input[i];
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(removeVowels("hello world"));
+// // Expected Output: "hll wrld"
+
+// function reverseString(input) {
+//   let output = "";
+//   for (let i = input.length - 1; i >= 0; i--) {
+//     output += input[i];
+//   }
+//   return output;
+// }
+
+// console.log(reverseString("hello"));
+// // Expected Output: "olleh"
+
+// function countLetter(input, letter) {
+//   let output = 0;
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] === letter) {
+//       output++;
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(countLetter("banana", "a"));
+// // Expected Output: 3
+
+// function findIndex(input, target) {
+//   let output = -1;
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] === target) {
+//       output = i; // Save the current index
+//       break; // Stop the loop immediately!
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(findIndex(["apple", "banana", "cherry", "banana"], "banana"));
+// // Expected Output: 1
+
+// function sumArray(input) {
+//   let output = 0;
+//   for (let i = 0; i < input.length; i++) {
+//     output += input[i];
+//   }
+//   return output;
+// }
+
+// console.log(sumArray([10, 20, 30, 40]));
+// // Expected Output: 100
+
+// function findMax(input) {
+//   let output = input[0];
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] > output) {
+//       output = input[i];
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(findMax([15, 42, 8, 23, 4]));
+// // Expected Output: 42
+
+// function findAllIndices(input, target) {
+//   let output = [];
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] === target) {
+//       output.push(i);
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(findAllIndices(["apple", "banana", "cherry", "banana"], "banana"));
+// // Expected Output: [1, 3]
+
+// function reverseArray(input) {
+//   let output = [];
+//   for (let i = input.length - 1; i >= 0; i--) {
+//     output.push(input[i]);
+//   }
+//   return output;
+// }
+
+// console.log(reverseArray(["apple", "banana", "cherry"]));
+// // Expected Output: ["cherry", "banana", "apple"]
+
+// function findLastIndex(input, target) {
+//   let output = -1;
+//   for (let i = input.length - 1; i >= 0; i--) {
+//     if (input[i] === target) {
+//       output = i;
+//       break;
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(findLastIndex(["apple", "banana", "cherry", "banana"], "banana"));
+// // Expected Output: 3
+
+function removeDuplicates(input) {
+  let output = [];
+  for (let i = 0; i < input.length; i++) {
+    output.push(input[i]);
+  }
+  return output;
+}
+
+console.log(removeDuplicates(["apple", "banana", "apple", "cherry", "banana"]));
+// Expected Output: ["apple", "banana", "cherry"]
