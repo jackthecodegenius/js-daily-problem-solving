@@ -3258,18 +3258,38 @@
 // console.log(moveFirstLetterToEnd("banana"));
 // // Expected Output: "ananab"
 
-function truncateString(input, maxLength) {
-  let output = "";
+// function truncateString(input, maxLength) {
+//   let output = "";
 
-  if (input.length > maxLength) {
-    return (output += input.slice(0, maxLength) + "...");
-  } else {
-    return (output = input);
+//   if (input.length > maxLength) {
+//     return (output += input.slice(0, maxLength) + "...");
+//   } else {
+//     return (output = input);
+//   }
+// }
+
+// console.log(truncateString("hello world", 5));
+// // Expected Output: "hello..."
+
+// console.log(truncateString("coding", 10));
+// // Expected Output: "coding" (because it's already shorter than 10!)
+
+function titleCase(str) {
+  let outputArr = [];
+
+  let newWord = str.split(" ");
+  for (let i = 0; i < newWord.length; i++) {
+    let firstLetter = newWord[i].slice(0, 1).toUpperCase();
+    let restOfWord = newWord[i].slice(1).toLowerCase();
+
+    outputArr.push(firstLetter + restOfWord);
   }
+
+  return outputArr.join(" ");
 }
 
-console.log(truncateString("hello world", 5));
-// Expected Output: "hello..."
+console.log(titleCase("the quick brown fox"));
+// Expected Output: "The Quick Brown Fox"
 
-console.log(truncateString("coding", 10));
-// Expected Output: "coding" (because it's already shorter than 10!)
+console.log(titleCase("jAvAsCrIpT iS aWeSoMe"));
+// Expected Output: "Javascript Is Awesome"
