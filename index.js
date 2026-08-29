@@ -3274,22 +3274,153 @@
 // console.log(truncateString("coding", 10));
 // // Expected Output: "coding" (because it's already shorter than 10!)
 
-function titleCase(str) {
-  let outputArr = [];
+// function titleCase(str) {
+//   let outputArr = [];
 
-  let newWord = str.split(" ");
-  for (let i = 0; i < newWord.length; i++) {
-    let firstLetter = newWord[i].slice(0, 1).toUpperCase();
-    let restOfWord = newWord[i].slice(1).toLowerCase();
+//   let newWord = str.split(" ");
+//   for (let i = 0; i < newWord.length; i++) {
+//     let firstLetter = newWord[i].slice(0, 1).toUpperCase();
+//     let restOfWord = newWord[i].slice(1).toLowerCase();
 
-    outputArr.push(firstLetter + restOfWord);
+//     outputArr.push(firstLetter + restOfWord);
+//   }
+
+//   return outputArr.join(" ");
+// }
+
+// console.log(titleCase("the quick brown fox"));
+// // Expected Output: "The Quick Brown Fox"
+
+// console.log(titleCase("jAvAsCrIpT iS aWeSoMe"));
+// // Expected Output: "Javascript Is Awesome"
+
+// function findLongestWord(str) {
+//   let longest = "";
+
+//   // Your code here!
+//   let longestArr = str.split(" ");
+
+//   for (let i = 0; i < longestArr.length; i++) {
+//     if (longestArr[i].length > longest.length) {
+//       longest = longestArr[i];
+//     }
+//   }
+//   return longest;
+// }
+
+// console.log(findLongestWord("The quick brown jumping fox"));
+// // Expected Output: "jumping"
+
+// console.log(findLongestWord("JavaScript is an awesome language"));
+// // Expected Output: "JavaScript"
+
+// function isPalindrome(str) {
+//   let output = "";
+//   let arr = str.split("").reverse().join("");
+//   if (arr === str) {
+//     output = true;
+//   } else {
+//     output = false;
+//   }
+
+//   return output;
+// }
+
+// console.log(isPalindrome("racecar")); // Expected Output: true
+// console.log(isPalindrome("hello")); // Expected Output: false
+// console.log(isPalindrome("madam")); // Expected Output: true
+
+// function shiftFirstHalf(str) {
+//   let half = Math.ceil(str.length / 2);
+
+//   let firstHalf = str.slice(0, half);
+//   let secondHalf = str.slice(half);
+
+//   return secondHalf + firstHalf;
+// }
+
+// console.log(shiftFirstHalf("abcdef")); // Expected Output: "defabc"
+// console.log(shiftFirstHalf("coding")); // Expected Output: "ingcod"
+// console.log(shiftFirstHalf("abcde")); // Expected Output: "deabc"
+
+// function maskMiddle(str) {
+//   if (str.length <= 4) {
+//     return str;
+//   }
+
+//   let firstTwo = str.slice(0, 2);
+//   let lastTwo = str.slice(-2);
+
+//   // Grab everything in the middle
+//   let middle = str.slice(2, -2);
+
+//   // Replace every character in that middle piece with a dash
+//   // (We can use a quick loop or .replace() for this, but let's keep it simple with a loop)
+//   let dashes = "";
+//   for (let i = 0; i < middle.length; i++) {
+//     dashes += "-";
+//   }
+
+//   return firstTwo + dashes + lastTwo;
+// }
+
+// console.log(maskMiddle("javascript")); // Expected Output: "ja------pt"
+
+// function swapEnds(str) {
+//   let first = str.slice(0, 3);
+//   let last = str.slice(-3);
+//   let middle = str.slice(3, -3);
+
+//   return last + middle + first;
+// }
+
+// console.log(swapEnds("abcdef")); // Expected Output: "defabc"
+// console.log(swapEnds("helloworld")); // Expected Output: "rldoworhel"
+// // (First 3: "hel", Last 3: "rld", Middle: "lowor" -> "rld" + "lowor" + "hel")
+
+// function charCount(str) {
+//   let counts = {};
+
+//   for (let i = 0; i < str.length; i++) {
+//     let char = str[i];
+//     if (counts[char]) {
+//       counts[char] += 1;
+//     } else {
+//       counts[char] = 1;
+//     }
+//   }
+
+//   return counts;
+// }
+
+// console.log(charCount("apple"));
+// // Expected Output: { a: 1, p: 2, l: 1, e: 1 }
+
+// console.log(charCount("banana"));
+// // Expected Output: { b: 1, a: 3, n: 2 }
+
+function firstUnique(str) {
+  let counts = {};
+
+  for (let i = 0; i < str.length; i++) {
+    let item = str[i];
+    if (counts[item]) {
+      counts[item] += 1;
+    } else {
+      counts[item] = 1;
+    }
   }
 
-  return outputArr.join(" ");
+  for (let i = 0; i < str.length; i++) {
+    let item = str[i];
+    if (counts[item] === 1) {
+      return item;
+    }
+  }
+
+  return null;
 }
 
-console.log(titleCase("the quick brown fox"));
-// Expected Output: "The Quick Brown Fox"
-
-console.log(titleCase("jAvAsCrIpT iS aWeSoMe"));
-// Expected Output: "Javascript Is Awesome"
+console.log(firstUnique("leetcode")); // Expected Output: "l" ('l' only appears once)
+console.log(firstUnique("loveleetcode")); // Expected Output: "v" ('l' repeats, 'o' repeats, 'v' is first unique)
+console.log(firstUnique("aabbcc")); // Expected Output: null
