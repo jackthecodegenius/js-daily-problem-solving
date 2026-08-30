@@ -3399,28 +3399,87 @@
 // console.log(charCount("banana"));
 // // Expected Output: { b: 1, a: 3, n: 2 }
 
-function firstUnique(str) {
-  let counts = {};
+// function firstUnique(str) {
+//   let counts = {};
 
-  for (let i = 0; i < str.length; i++) {
-    let item = str[i];
-    if (counts[item]) {
-      counts[item] += 1;
+//   for (let i = 0; i < str.length; i++) {
+//     let item = str[i];
+//     if (counts[item]) {
+//       counts[item] += 1;
+//     } else {
+//       counts[item] = 1;
+//     }
+//   }
+
+//   for (let i = 0; i < str.length; i++) {
+//     let item = str[i];
+//     if (counts[item] === 1) {
+//       return item;
+//     }
+//   }
+
+//   return null;
+// }
+
+// console.log(firstUnique("leetcode")); // Expected Output: "l" ('l' only appears once)
+// console.log(firstUnique("loveleetcode")); // Expected Output: "v" ('l' repeats, 'o' repeats, 'v' is first unique)
+// console.log(firstUnique("aabbcc")); // Expected Output: null
+
+// function areAnagrams(str1, str2) {
+//   // 1. If lengths don't match, they aren't anagrams
+//   if (str1.length !== str2.length) {
+//     return false;
+//   }
+
+//   let count = {};
+
+//   // 2. Build the frequency map for str1
+//   for (let i = 0; i < str1.length; i++) {
+//     let item = str1[i];
+//     if (count[item]) {
+//       count[item] += 1;
+//     } else {
+//       count[item] = 1;
+//     }
+//   }
+
+//   // 3. Subtract counts using str2
+//   for (let i = 0; i < str2.length; i++) {
+//     let item = str2[i];
+
+//     // If the letter doesn't exist in our map OR it's already at 0, fail!
+//     if (!count[item]) {
+//       return false;
+//     }
+
+//     count[item] -= 1;
+//   }
+
+//   // 4. If we survived both loops, it's a match!
+//   return true;
+// }
+
+function findCommon(arr1, arr2) {
+  let count = {};
+  let newArr = [];
+  for (let i = 0; i < arr1.length; i++) {
+    let item = arr1[i];
+    if (count[item]) {
+      count[item] += 1;
     } else {
-      counts[item] = 1;
+      count[item] = 1;
+    }
+  }
+  for (let i = 0; i < arr2.length; i++) {
+    let item = arr2[i];
+    if (count[item]) {
+      newArr.push(item);
+      count[item] = 0;
     }
   }
 
-  for (let i = 0; i < str.length; i++) {
-    let item = str[i];
-    if (counts[item] === 1) {
-      return item;
-    }
-  }
-
-  return null;
+  return newArr;
 }
 
-console.log(firstUnique("leetcode")); // Expected Output: "l" ('l' only appears once)
-console.log(firstUnique("loveleetcode")); // Expected Output: "v" ('l' repeats, 'o' repeats, 'v' is first unique)
-console.log(firstUnique("aabbcc")); // Expected Output: null
+console.log(findCommon([1, 2, 2, 1], [2, 2])); // Expected Output: [2]
+console.log(findCommon([4, 9, 5], [9, 4, 9, 8, 4])); // Expected Output: [4, 9] (order doesn't strictly matter)
