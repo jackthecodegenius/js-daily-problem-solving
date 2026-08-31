@@ -3459,27 +3459,202 @@
 //   return true;
 // }
 
-function findCommon(arr1, arr2) {
-  let count = {};
-  let newArr = [];
-  for (let i = 0; i < arr1.length; i++) {
-    let item = arr1[i];
-    if (count[item]) {
-      count[item] += 1;
-    } else {
-      count[item] = 1;
-    }
-  }
-  for (let i = 0; i < arr2.length; i++) {
-    let item = arr2[i];
-    if (count[item]) {
-      newArr.push(item);
-      count[item] = 0;
+// function findCommon(arr1, arr2) {
+//   let count = {};
+//   let newArr = [];
+//   for (let i = 0; i < arr1.length; i++) {
+//     let item = arr1[i];
+//     if (count[item]) {
+//       count[item] += 1;
+//     } else {
+//       count[item] = 1;
+//     }
+//   }
+//   for (let i = 0; i < arr2.length; i++) {
+//     let item = arr2[i];
+//     if (count[item]) {
+//       newArr.push(item);
+//       count[item] = 0;
+//     }
+//   }
+
+//   return newArr;
+// }
+
+// console.log(findCommon([1, 2, 2, 1], [2, 2])); // Expected Output: [2]
+// console.log(findCommon([4, 9, 5], [9, 4, 9, 8, 4])); // Expected Output: [4, 9] (order doesn't strictly matter)
+
+// function findMissing(arr) {
+//   let count = {}
+
+//   for (let i = 0; i < arr.length; i++) {
+
+//   }
+// }
+
+// console.log(findMissing([1, 2, 4, 5]));    // Expected Output: 3
+// console.log(findMissing([2, 3, 1, 5]));    // Expected Output: 4 (order might be jumbl
+
+// function findMissing(arr) {
+//   let counts = {};
+//   let n = arr.length + 1; // The highest number that *should* exist
+
+//   // Step 1: Mark every number we see as true in our object
+//   for (let i = 0; i < arr.length; i++) {
+//     let num = arr[i];
+//     counts[num] = true;
+//   }
+
+//   // Step 2: Loop from 1 to n and find the one that isn't in our object
+//   for (let i = 1; i <= n; i++) {
+//     if (!counts[i]) {
+//       return i; // Found the missing number!
+//     }
+//   }
+// }
+
+// console.log(findMissing([1, 2, 4, 5])); // Expected Output: 3
+// console.log(findMissing([2, 3, 1, 5])); // Expected Output: 4
+
+// const prices = {
+//   "counter-strike": 0,
+//   "rainbow-six": 30,
+//   geoguessr: 15,
+// };
+
+// function getPrice(gameName) {
+//   // 1. Check if the gameName exists as a key inside our prices object
+//   if (prices[gameName] !== undefined) {
+//     return prices[gameName]; // Return its actual price!
+//   } else {
+//     return "Not found";
+//   }
+// }
+
+// console.log(getPrice("rainbow-six")); // Expected Output: 30
+// console.log(getPrice("minecraft")); // Expected Output: Not found
+
+// const inventory = {
+//   "energy-drink": 12,
+//   "protein-bar": 5,
+//   "shaker-bottle": 0,
+// };
+
+// function checkStock(itemName) {
+//   if (inventory[itemName] !== undefined) {
+//     return inventory[itemName];
+//   } else {
+//     return "out of stock ";
+//   }
+// }
+
+// console.log(checkStock("protein-bar")); // Expected Output: 5
+// console.log(checkStock("headphones")); // Expected Output: Out of stock
+
+// const scores = {
+//   alex: 450,
+//   sam: 890,
+//   jordan: 320,
+// };
+
+// function getScore(playerName) {
+//   if (scores[playerName] !== undefined) {
+//     return scores[playerName];
+//   } else {
+//     return "player not found ";
+//   }
+// }
+
+// console.log(getScore("sam")); // Expected Output: 890
+// console.log(getScore("taylor")); // Expected Output: Player not found
+
+// const guestList = {
+//   alex: true,
+//   sam: true,
+//   jordan: true,
+// };
+
+// function isInvited(name) {
+//   if (guestList[name] !== undefined) {
+//     return guestList[name];
+//   } else {
+//     return false;
+//   }
+//   // Hint: You can check if something is NOT undefined, or look at how we checked before!
+// }
+
+// console.log(isInvited("sam")); // Expected Output: true
+// console.log(isInvited("taylor")); // Expected Output: false
+
+// const votes = ["rpg", "fps", "rpg", "strategy", "fps", "rpg"];
+
+// function tallyVotes(arr) {
+//   let counts = {};
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let genre = arr[i];
+//     if (counts[genre] !== undefined) {
+//       counts[genre] += 1;
+//     } else {
+//       counts[genre] = 1;
+//     }
+//   }
+
+//   return counts;
+// }
+
+// console.log(tallyVotes(votes));
+// // Expected Output: { rpg: 3, fps: 2, strategy: 1 }
+
+// const pickedUpItems = [
+//   "potion",
+//   "sword",
+//   "potion",
+//   "shield",
+//   "potion",
+//   "sword",
+// ];
+
+// function countItems(itemList) {
+//   let counts = {};
+
+//   // Write your loop and conditional logic here!
+//   for (let i = 0; i < itemList.length; i++) {
+//     let item = itemList[i];
+
+//     if (counts[item] !== undefined) {
+//       counts[item] += 1;
+//     } else {
+//       counts[item] = 1;
+//     }
+//   }
+
+//   return counts;
+// }
+
+// console.log(countItems(pickedUpItems));
+// // Expected Output: { potion: 3, sword: 2, shield: 1 }
+
+const priceList = {
+  potion: 10,
+  sword: 150,
+  shield: 75,
+};
+
+const cart = ["potion", "potion", "shield"];
+
+function calculateTotal(cartArray) {
+  let total = 0;
+
+  for (let i = 0; i < cartArray.length; i++) {
+    let item = cartArray[i];
+
+    if (priceList[item] !== undefined) {
+      total += priceList[item];
     }
   }
 
-  return newArr;
+  return total;
 }
 
-console.log(findCommon([1, 2, 2, 1], [2, 2])); // Expected Output: [2]
-console.log(findCommon([4, 9, 5], [9, 4, 9, 8, 4])); // Expected Output: [4, 9] (order doesn't strictly matter)
+console.log(calculateTotal(cart)); // Expected Output: 95 (10 + 10 + 75)
