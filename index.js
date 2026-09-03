@@ -3635,26 +3635,296 @@
 // console.log(countItems(pickedUpItems));
 // // Expected Output: { potion: 3, sword: 2, shield: 1 }
 
-const priceList = {
-  potion: 10,
-  sword: 150,
-  shield: 75,
-};
+// const priceList = {
+//   potion: 10,
+//   sword: 150,
+//   shield: 75,
+// };
 
-const cart = ["potion", "potion", "shield"];
+// const cart = ["potion", "potion", "shield"];
 
-function calculateTotal(cartArray) {
-  let total = 0;
+// function calculateTotal(cartArray) {
+//   let total = 0;
 
-  for (let i = 0; i < cartArray.length; i++) {
-    let item = cartArray[i];
+//   for (let i = 0; i < cartArray.length; i++) {
+//     let item = cartArray[i];
 
-    if (priceList[item] !== undefined) {
-      total += priceList[item];
-    }
-  }
+//     if (priceList[item] !== undefined) {
+//       total += priceList[item];
+//     }
+//   }
 
-  return total;
+//   return total;
+// }
+
+// console.log(calculateTotal(cart)); // Expected Output: 95 (10 + 10 + 75)
+
+// const buffs = {
+//   apple: 5,
+//   bread: 12,
+//   meat: 25,
+//   potion: 50,
+// };
+
+// const eatenFoods = ["apple", "apple", "bread", "potion"];
+
+// function calculateTotalBuff(foodArray) {
+//   let totalBuff = 0;
+
+//   for (let i = 0; i < foodArray.length; i++) {
+//     let item = foodArray[i];
+//     if (buffs[item] !== undefined) {
+//       totalBuff += buffs[item];
+//     }
+//   }
+
+//   return totalBuff;
+// }
+
+// console.log(calculateTotalBuff(eatenFoods)); // Expected Output: 72 (5 + 5 + 12 + 50)
+
+// const items = ["apple", "banana", "apple", "orange", "banana"];
+
+// function findFirstUnique(arr) {
+//   let counts = {};
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let item = arr[i];
+
+//     if (counts[item] !== undefined) {
+//       counts[item] += 1;
+//     } else {
+//       counts[item] = 1;
+//     }
+//   }
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let item = arr[i];
+
+//     if (counts[item] === 1) {
+//       return item;
+//     }
+//   }
+
+//   return null;
+// }
+
+// console.log(findFirstUnique(items)); // Expected Output: "orange"
+
+// const items = ["apple", "banana", "orange", "apple", "banana"];
+
+// function findFirstRepeating(arr) {
+//   let counts = {};
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let item = arr[i];
+
+//     if (counts[item] !== undefined) {
+//       counts[item] += 1;
+//     } else {
+//       counts[item] = 1;
+//     }
+//   }
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let item = arr[i];
+
+//     if (counts[item] > 1) {
+//       return item;
+//     }
+//   }
+
+//   return null;
+// }
+
+// console.log(findFirstRepeating(items)); // Expected Output: "apple"
+
+// function isAnagram(str1, str2) {
+//   let counts = {};
+
+//   if (str1.length > str2.length || str1.length < str2.length) {
+//     return false;
+//   }
+
+//   for (let i = 0; i < str1.length; i++) {
+//     let item = str1[i];
+
+//     if (counts[item] !== undefined) {
+//       counts[item] += 1;
+//     } else {
+//       counts[item] = 1;
+//     }
+//   }
+
+//   for (let i = 0; i < str2.length; i++) {
+//     let item = str2[i];
+
+//     if (counts[item] === undefined || counts[item] === 0) {
+//       return false;
+//     }
+
+//     counts[item] -= 1;
+//   }
+
+//   return true;
+// }
+
+// console.log(isAnagram("listen", "silent")); // Expected Output: true
+// console.log(isAnagram("triangle", "integral")); // Expected Output: true
+// console.log(isAnagram("apple", "papel")); // Expected Output: true
+// console.log(isAnagram("rat", "car")); // Expected Output: false
+
+// function canSpell(hand, target) {
+//   let count = {};
+
+//   for (let i = 0; i < hand.length; i++) {
+//     let item = hand[i];
+
+//     if (count[item] !== undefined) {
+//       count[item] += 1;
+//     } else {
+//       count[item] = 1;
+//     }
+//   }
+
+//   for (let i = 0; i < target.length; i++) {
+//     let item = target[i];
+
+//     if (count[item] === undefined || count[item] === 0) {
+//       return false;
+//     }
+
+//     count[item] -= 1;
+//   }
+
+//   return true;
+// }
+
+// console.log(canSpell("catdog", "dog")); // Expected Output: true
+// console.log(canSpell("apple", "apply")); // Expected Output: false (missing 'y')
+// console.log(canSpell("aabbcc", "abc")); // Expected Output: true
+// console.log(canSpell("programming", "gram")); // Expected Output: true
+
+// function mostFrequent(arr) {
+//   let count = {};
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let item = arr[i];
+
+//     if (count[item] !== undefined) {
+//       count[item] += 1;
+//     } else {
+//       count[item] = 1;
+//     }
+//   }
+
+//   let maxCount = 0;
+//   let winningItem = null;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let item = arr[i];
+
+//     if (count[item] > maxCount) {
+//       maxCount = count[item];
+//       winningItem = item;
+//     }
+//   }
+
+//   return winningItem;
+// }
+
+// console.log(
+//   mostFrequent(["apple", "banana", "apple", "orange", "banana", "apple"]),
+// );
+// // Expected Output: "apple" (appears 3 times)
+
+// console.log(mostFrequent(["cat", "dog", "dog", "cat", "cat", "bird"]));
+// // Expected Output: "cat" (appears 3 times)
+
+// console.log(mostFrequent(["x", "y", "y", "z", "z", "z"]));
+// // Expected Output: "z" (appears 3 times)
+
+// function doubleNumbers(arr) {
+//   let output = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     output.push(arr[i] * 2);
+//   }
+//   return output;
+// }
+
+// console.log(doubleNumbers([1, 2, 3])); // Expected Output: [2, 4, 6]
+// console.log(doubleNumbers([5, 10, 15])); // Expected Output: [10, 20, 30]
+// console.log(doubleNumbers([-2, 0, 4])); // Expected Output: [-4, 0, 8]
+
+// function arrayIntersection(arr1, arr2) {
+//   let count = {};
+//   let result = [];
+
+//   for (let i = 0; i < arr1.length; i++) {
+//     let item = arr1[i];
+
+//     if (count[item] !== undefined) {
+//       count[item] += 1;
+//     } else {
+//       count[item] = 1;
+//     }
+//   }
+
+//   for (let i = 0; i < arr2.length; i++) {
+//     let item = arr2[i];
+
+//     if (count[item] !== undefined && count[item] > 0) {
+//       result.push(item);
+
+//       count[item] -= 1;
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(arrayIntersection([1, 2, 2, 1], [2, 2])); // Expected Output: [2, 2]
+// console.log(arrayIntersection([4, 9, 5], [9, 4, 9, 8, 4])); // Expected Output: [4, 9] (or [9, 4])
+// console.log(arrayIntersection(["apple", "banana"], ["banana", "kiwi"])); // Expected Output: ["banana"]
+
+// function getEvenNumbers(arr) {
+//   return arr.filter((item) => item % 2 === 0);
+// }
+
+// console.log(getEvenNumbers([1, 2, 3, 4, 5, 6])); // Expected Output: [2, 4, 6]
+// console.log(getEvenNumbers([10, 15, 20, 25])); // Expected Output: [10, 20]
+// console.log(getEvenNumbers([1, 3, 5])); // Expected Output: []
+
+// function doubleNumbers(arr) {
+//   return arr.map((item) => item * 2);
+// }
+
+// console.log(doubleNumbers([1, 2, 3])); // Expected Output: [2, 4, 6]
+// console.log(doubleNumbers([5, 10, 15])); // Expected Output: [10, 20, 30]
+
+// function doubleEvenNumbers(arr) {
+//   return arr.filter((item) => item % 2 === 0).map((item) => item * 2);
+// }
+
+// console.log(doubleEvenNumbers([1, 2, 3, 4, 5, 6]));
+// // Expected Output: [4, 8, 12]
+// // (Why? Even numbers are 2, 4, 6. Doubled, they become 4, 8, 12)
+
+// console.log(doubleEvenNumbers([10, 15, 20, 25]));
+// // Expected Output: [20, 40]
+
+function getActiveUserNames(users) {
+  return users
+    .filter((item) => item.active === true)
+    .map((item) => item.name.toUpperCase());
 }
 
-console.log(calculateTotal(cart)); // Expected Output: 95 (10 + 10 + 75)
+const usersList = [
+  { name: "alice", active: true },
+  { name: "bob", active: false },
+  { name: "charlie", active: true },
+  { name: "diana", active: false },
+];
+
+console.log(getActiveUserNames(usersList));
+// Expected Output: ["ALICE", "CHARLIE"]
