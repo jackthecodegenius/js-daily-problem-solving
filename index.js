@@ -3913,18 +3913,37 @@
 // console.log(doubleEvenNumbers([10, 15, 20, 25]));
 // // Expected Output: [20, 40]
 
-function getActiveUserNames(users) {
-  return users
-    .filter((item) => item.active === true)
-    .map((item) => item.name.toUpperCase());
+// function getActiveUserNames(users) {
+//   return users
+//     .filter((item) => item.active === true)
+//     .map((item) => item.name.toUpperCase());
+// }
+
+// const usersList = [
+//   { name: "alice", active: true },
+//   { name: "bob", active: false },
+//   { name: "charlie", active: true },
+//   { name: "diana", active: false },
+// ];
+
+// console.log(getActiveUserNames(usersList));
+// // Expected Output: ["ALICE", "CHARLIE"]
+
+function reverseArray(arr) {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left < right) {
+    // 1. Swap the elements using destructuring (or a temp variable)
+    [arr[left], arr[right]] = [arr[right], arr[left]];
+
+    // 2. Move BOTH pointers inward
+    left++;
+    right--;
+  }
+
+  return arr;
 }
 
-const usersList = [
-  { name: "alice", active: true },
-  { name: "bob", active: false },
-  { name: "charlie", active: true },
-  { name: "diana", active: false },
-];
-
-console.log(getActiveUserNames(usersList));
-// Expected Output: ["ALICE", "CHARLIE"]
+console.log(reverseArray([1, 2, 3, 4, 5])); // Expected Output: [5, 4, 3, 2, 1]
+console.log(reverseArray(["a", "b", "c", "d"])); // Expected Output: ["d", "c", "b", "a"]
