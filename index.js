@@ -3929,21 +3929,29 @@
 // console.log(getActiveUserNames(usersList));
 // // Expected Output: ["ALICE", "CHARLIE"]
 
-function reverseArray(arr) {
-  let left = 0;
-  let right = arr.length - 1;
+// function reverseArray(arr) {
+//   let left = 0;
+//   let right = arr.length - 1;
 
-  while (left < right) {
-    // 1. Swap the elements using destructuring (or a temp variable)
-    [arr[left], arr[right]] = [arr[right], arr[left]];
+//   while (left < right) {
+//     // 1. Swap the elements using destructuring (or a temp variable)
+//     [arr[left], arr[right]] = [arr[right], arr[left]];
 
-    // 2. Move BOTH pointers inward
-    left++;
-    right--;
-  }
+//     // 2. Move BOTH pointers inward
+//     left++;
+//     right--;
+//   }
 
-  return arr;
-}
+//   return arr;
+// }
 
-console.log(reverseArray([1, 2, 3, 4, 5])); // Expected Output: [5, 4, 3, 2, 1]
-console.log(reverseArray(["a", "b", "c", "d"])); // Expected Output: ["d", "c", "b", "a"]
+// console.log(reverseArray([1, 2, 3, 4, 5])); // Expected Output: [5, 4, 3, 2, 1]
+// console.log(reverseArray(["a", "b", "c", "d"])); // Expected Output: ["d", "c", "b", "a"]
+
+var kidsWithCandies = function (candies, extraCandies) {
+  let maxCandies = Math.max(...candies);
+
+  return candies.map((candy) => candy + extraCandies >= maxCandies);
+};
+
+console.log(kidsWithCandies([2, 3, 5, 1, 3], 3));
